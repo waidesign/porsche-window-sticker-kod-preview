@@ -1,0 +1,6 @@
+{
+  "name": "Porsche Window Sticker Lookup",
+  "description": "An ultra-premium Porsche window sticker (Monroney Label) lookup tool, enabling detailed specifications, options, and MSRP breakdown.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

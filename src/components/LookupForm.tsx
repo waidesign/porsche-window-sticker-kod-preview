@@ -6,6 +6,8 @@ interface LookupFormProps {
   onLookup: (request: LookupRequest) => void;
   isLoading: boolean;
   onOpenVinGuide?: () => void;
+  /** "glass" (default) floats a frosted card over a photo backdrop; "solid" gives a defined card for plain backgrounds. */
+  variant?: "glass" | "solid";
 }
 
 const STATES_LIST = [
@@ -26,7 +28,7 @@ const trimsMap: { [key: string]: string[] } = {
   "Cayenne": ["Turbo GT Coupe", "Turbo E-Hybrid", "S Coupe", "E-Hybrid", "Base"]
 };
 
-export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: LookupFormProps) {
+export default function LookupForm({ onLookup, isLoading, onOpenVinGuide, variant = "glass" }: LookupFormProps) {
   const [activeTab, setActiveTab] = useState<"vin" | "plate" | "ymm">("vin");
   
   // Form states
@@ -58,13 +60,26 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
     }
   };
 
+  const isGlass = variant === "glass";
+  const fieldClasses = isGlass
+    ? "border-white/50 bg-white/40 focus:bg-white/60"
+    : "border-zinc-200 bg-zinc-50 focus:bg-white";
+
   return (
-    <div className="bg-white/35 backdrop-blur-md backdrop-saturate-150 border border-white/60 rounded-none p-6 sm:p-8 w-full max-w-[480px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.7)] relative overflow-hidden">
-      {/* Glass sheen overlay */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-white/50 via-white/5 to-transparent"></div>
+    <div
+      className={
+        isGlass
+          ? "bg-white/20 backdrop-blur-sm border border-white/60 rounded-none p-6 sm:p-8 w-full max-w-[480px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.7)] relative overflow-hidden"
+          : "bg-white border border-zinc-200 rounded-none p-6 sm:p-8 w-full max-w-[480px] shadow-[0_20px_50px_-15px_rgba(0,0,0,0.15)] relative overflow-hidden"
+      }
+    >
+      {/* Glass sheen overlay (glass variant only) */}
+      {isGlass && (
+        <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-white/25 via-white/5 to-transparent"></div>
+      )}
 
       {/* Confident Pills Tab Toggles */}
-      <div className="relative flex bg-white/40 backdrop-blur-sm p-1 mb-6 border border-white/50 rounded-none">
+      <div className={`relative flex p-1 mb-6 rounded-none ${isGlass ? "bg-white/40 backdrop-blur-sm border border-white/50" : "bg-zinc-100 border border-zinc-200"}`}>
         <button
           type="button"
           onClick={() => setActiveTab("vin")}
@@ -116,7 +131,7 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
                 value={vin}
                 onChange={(e) => setVin(e.target.value.toUpperCase())}
                 placeholder="e.g. WP0AC2A9XFS1XXXXX"
-                className="w-full border border-white/50 px-4 py-3.5 pr-10 text-xs font-mono bg-white/40 text-black focus:bg-white/60 focus:outline-none focus:border-[#9B2226] transition-all rounded-none"
+                className={`w-full border px-4 py-3.5 pr-10 text-xs font-mono text-black focus:outline-none focus:border-[#9B2226] transition-all rounded-none ${fieldClasses}`}
               />
               <Search className="absolute right-3.5 top-3.5 w-4 h-4 text-black" />
             </div>
@@ -142,7 +157,7 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
                 value={plate}
                 onChange={(e) => setPlate(e.target.value.toUpperCase())}
                 placeholder="e.g. 911GT3RS"
-                className="w-full border border-white/50 px-4 py-3.5 text-xs font-mono bg-white/40 text-black focus:bg-white/60 focus:outline-none focus:border-[#9B2226] transition-all rounded-none"
+                className={`w-full border px-4 py-3.5 text-xs font-mono text-black focus:outline-none focus:border-[#9B2226] transition-all rounded-none ${fieldClasses}`}
               />
             </div>
             <div className="space-y-2">
@@ -154,7 +169,7 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
                   id="state-select-form"
                   value={state}
                   onChange={(e) => setState(e.target.value)}
-                  className="w-full appearance-none border border-white/50 pl-4 pr-10 py-3.5 text-xs bg-white/40 text-black focus:bg-white/60 focus:outline-none focus:border-[#9B2226] transition-all rounded-none font-mono"
+                  className={`w-full appearance-none border pl-4 pr-10 py-3.5 text-xs text-black focus:outline-none focus:border-[#9B2226] transition-all rounded-none font-mono ${fieldClasses}`}
                 >
                   {STATES_LIST.map((st) => (
                     <option key={st} value={st} className="bg-[#FFFFFF]">
@@ -182,7 +197,7 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
                     id="year-select-form"
                     value={year}
                     onChange={(e) => setYear(parseInt(e.target.value))}
-                    className="w-full appearance-none border border-white/50 pl-4 pr-10 py-3.5 text-xs bg-white/40 text-black focus:bg-white/60 focus:outline-none focus:border-[#9B2226] rounded-none font-mono"
+                    className={`w-full appearance-none border pl-4 pr-10 py-3.5 text-xs text-black focus:outline-none focus:border-[#9B2226] rounded-none font-mono ${fieldClasses}`}
                   >
                     {[2026, 2025, 2024, 2023, 2022, 2021, 2020].map((yr) => (
                       <option key={yr} value={yr} className="bg-[#FFFFFF]">
@@ -204,7 +219,7 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
                     id="model-select-form"
                     value={model}
                     onChange={(e) => handleModelChange(e.target.value)}
-                    className="w-full appearance-none border border-white/50 pl-4 pr-10 py-3.5 text-xs bg-white/40 text-black focus:bg-white/60 focus:outline-none focus:border-[#9B2226] rounded-none font-mono"
+                    className={`w-full appearance-none border pl-4 pr-10 py-3.5 text-xs text-black focus:outline-none focus:border-[#9B2226] rounded-none font-mono ${fieldClasses}`}
                   >
                     <option value="911" className="bg-[#FFFFFF]">911 Sports Car</option>
                     <option value="Taycan" className="bg-[#FFFFFF]">Taycan EV</option>
@@ -226,7 +241,7 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
                   id="trim-select-form"
                   value={trim}
                   onChange={(e) => setTrim(e.target.value)}
-                  className="w-full appearance-none border border-white/50 pl-4 pr-10 py-3.5 text-xs bg-white/40 text-black focus:bg-white/60 focus:outline-none focus:border-[#9B2226] rounded-none font-semibold font-mono"
+                  className={`w-full appearance-none border pl-4 pr-10 py-3.5 text-xs text-black focus:outline-none focus:border-[#9B2226] rounded-none font-semibold font-mono ${fieldClasses}`}
                 >
                   {trimsMap[model]?.map((tr) => (
                     <option key={tr} value={tr} className="bg-[#FFFFFF]">
@@ -261,7 +276,7 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
 
       {/* Where can I find my Porsche VIN? link and popover trigger */}
       {activeTab === "vin" && onOpenVinGuide && (
-        <div className="relative z-10 mt-6 border-t border-white/50 pt-4 text-center">
+        <div className={`relative z-10 mt-6 border-t pt-4 text-center ${isGlass ? "border-white/50" : "border-zinc-200"}`}>
           <button
             id="vin-lookup-guide-trigger-form"
             type="button"

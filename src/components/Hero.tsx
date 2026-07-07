@@ -245,7 +245,7 @@ export default function Hero({ onLookup, isLoading, onSelectPreset, onOpenVinGui
 
               {/* Mobile-only inline lookup form (desktop version floats on the image panel) */}
               <motion.div custom={0.4} variants={fadeUp} className="lg:hidden pt-4">
-                <LookupForm onLookup={onLookup} isLoading={isLoading} onOpenVinGuide={onOpenVinGuide} />
+                <LookupForm onLookup={onLookup} isLoading={isLoading} onOpenVinGuide={onOpenVinGuide} variant="solid" />
               </motion.div>
             </motion.div>
           </div>

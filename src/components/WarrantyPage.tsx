@@ -81,10 +81,11 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
 
             {/* Right Form Column */}
             <div className="lg:col-span-6 flex justify-center">
-              <LookupForm 
-                onLookup={onLookup} 
-                isLoading={isLoading} 
-                onOpenVinGuide={onOpenVinGuide} 
+              <LookupForm
+                onLookup={onLookup}
+                isLoading={isLoading}
+                onOpenVinGuide={onOpenVinGuide}
+                variant="solid"
               />
             </div>
 
@@ -656,7 +657,7 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#C9A227] text-zinc-900 hover:bg-[#B8922A] text-xs font-mono font-bold uppercase tracking-widest py-3.5 px-8 rounded-none border border-transparent transition-all duration-300 active:scale-[0.99] shadow-sm cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-white border border-black text-black hover:bg-black hover:text-white text-xs font-mono font-bold uppercase tracking-widest py-3.5 px-8 rounded-none transition-all duration-300 active:scale-[0.99] shadow-sm cursor-pointer"
             >
               View Sample Window Sticker
             </button>

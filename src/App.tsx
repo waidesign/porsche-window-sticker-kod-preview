@@ -134,7 +134,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#09090B] flex flex-col selection:bg-[#A1FF2C] selection:text-black">
+    <div className="min-h-screen bg-[#FFFFFF] flex flex-col selection:bg-[#9B2226] selection:text-white">
       {import.meta.env.DEV && <Agentation />}
 
       {/* Sticky Premium Navbar */}
@@ -143,22 +143,22 @@ export default function App() {
       <main className="flex-grow">
         {/* Dynamic Loading Overlay */}
         {isLoading && (
-          <div className="bg-[#09090B] border-y border-zinc-800 py-24 text-center flex flex-col items-center justify-center relative overflow-hidden z-20">
-            <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+          <div className="bg-[#FFFFFF] border-y border-zinc-200 py-24 text-center flex flex-col items-center justify-center relative overflow-hidden z-20">
+            <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#000000_1px,transparent_1px)] [background-size:16px_16px]"></div>
             
             <div className="relative w-16 h-16 mb-6">
               {/* Spinning Loader Circles */}
-              <div className="absolute inset-0 border-4 border-zinc-900 rounded-full"></div>
-              <div className="absolute inset-0 border-4 border-[#A1FF2C] border-t-transparent rounded-full animate-spin"></div>
+              <div className="absolute inset-0 border-4 border-zinc-100 rounded-full"></div>
+              <div className="absolute inset-0 border-4 border-[#9B2226] border-t-transparent rounded-full animate-spin"></div>
             </div>
 
-            <span className="text-[10px] font-mono uppercase tracking-widest text-[#A1FF2C] font-bold block mb-2">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-[#9B2226] font-bold block mb-2">
               CHASSIS ARCHIVAL QUERY IN PROGRESS
             </span>
-            <h3 className="font-display text-lg font-bold text-white mb-3">
+            <h3 className="font-display text-lg font-bold text-zinc-900 mb-3">
               Decoding Registry Records
             </h3>
-            <p className="text-sm text-zinc-400 font-mono animate-pulse min-h-[20px]">
+            <p className="text-sm text-zinc-600 font-mono animate-pulse min-h-[20px]">
               {loadingMessage}
             </p>
           </div>
@@ -216,18 +216,18 @@ export default function App() {
         >
           <div 
             id="vin-guide-modal-card" 
-            className="bg-zinc-950 border border-zinc-850 p-6 sm:p-8 w-full max-w-[480px] relative shadow-[0_25px_50px_-12px_rgba(0,0,0,0.9)] text-left rounded-none"
+            className="bg-zinc-50 border border-zinc-200 p-6 sm:p-8 w-full max-w-[480px] relative shadow-[0_25px_50px_-12px_rgba(0,0,0,0.9)] text-left rounded-none"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Top accent line */}
-            <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-[#A1FF2C] via-white to-transparent"></div>
+            <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-[#9B2226] via-zinc-900 to-transparent"></div>
             
             {/* Close Button */}
             <button
               id="vin-guide-modal-close-btn"
               type="button"
               onClick={() => setIsVinModalOpen(false)}
-              className="absolute top-4 right-4 text-zinc-500 hover:text-[#A1FF2C] transition-colors p-1 cursor-pointer"
+              className="absolute top-4 right-4 text-zinc-500 hover:text-[#9B2226] transition-colors p-1 cursor-pointer"
               aria-label="Close VIN guide"
             >
               <X className="w-5 h-5" />
@@ -236,10 +236,10 @@ export default function App() {
             {/* Modal Content */}
             <div className="space-y-6">
               <div>
-                <h3 id="vin-guide-modal-title" className="font-display text-lg sm:text-xl font-extrabold tracking-tight text-white leading-tight">
+                <h3 id="vin-guide-modal-title" className="font-display text-lg sm:text-xl font-extrabold tracking-tight text-zinc-900 leading-tight">
                   HOW TO LOCATE YOUR PORSCHE'S 17-CHARACTER VIN
                 </h3>
-                <p className="text-zinc-400 text-xs mt-2 leading-relaxed font-sans">
+                <p className="text-zinc-600 text-xs mt-2 leading-relaxed font-sans">
                   Porsche embeds your unique 17-character vehicle identification number in multiple easy-to-locate configurations:
                 </p>
               </div>
@@ -248,14 +248,14 @@ export default function App() {
               <div className="space-y-5 font-sans">
                 {/* Step 1 */}
                 <div id="vin-step-1" className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-none bg-[#A1FF2C] text-black font-mono text-xs font-bold">
+                  <div className="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-none bg-[#9B2226] text-white font-mono text-xs font-bold">
                     1
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#A1FF2C]">
+                    <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#9B2226]">
                       Lower Driver-Side Windshield
                     </h4>
-                    <p className="text-xs text-zinc-400 leading-relaxed">
+                    <p className="text-xs text-zinc-600 leading-relaxed">
                       Stand outside your Porsche and inspect the lower bottom corner of the driver's side front windshield. You will see the VIN engraved onto a metal plate.
                     </p>
                   </div>
@@ -263,14 +263,14 @@ export default function App() {
 
                 {/* Step 2 */}
                 <div id="vin-step-2" className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-none bg-[#A1FF2C] text-black font-mono text-xs font-bold">
+                  <div className="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-none bg-[#9B2226] text-white font-mono text-xs font-bold">
                     2
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#A1FF2C]">
+                    <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#9B2226]">
                       Driver's Side Door Jamb
                     </h4>
-                    <p className="text-xs text-zinc-400 leading-relaxed">
+                    <p className="text-xs text-zinc-600 leading-relaxed">
                       Open your driver's cabin door and look at the side door frame pillar (B-pillar). You will see the official safety compliance sticker printing your VIN and manufacturing date.
                     </p>
                   </div>
@@ -278,14 +278,14 @@ export default function App() {
 
                 {/* Step 3 */}
                 <div id="vin-step-3" className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-none bg-[#A1FF2C] text-black font-mono text-xs font-bold">
+                  <div className="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-none bg-[#9B2226] text-white font-mono text-xs font-bold">
                     3
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#A1FF2C]">
+                    <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#9B2226]">
                       Vehicle Documents & Registration
                     </h4>
-                    <p className="text-xs text-zinc-400 leading-relaxed">
+                    <p className="text-xs text-zinc-600 leading-relaxed">
                       Your 17-character VIN is printed on your vehicle registration card, title documents, insurance policy, and can also be retrieved in the official My Porsche companion app.
                     </p>
                   </div>
@@ -297,7 +297,7 @@ export default function App() {
                 id="vin-guide-modal-confirm-btn"
                 type="button"
                 onClick={() => setIsVinModalOpen(false)}
-                className="w-full bg-[#A1FF2C] text-black hover:bg-black hover:text-[#A1FF2C] hover:border-[#A1FF2C] text-xs font-mono font-bold uppercase tracking-widest py-3 border border-transparent transition-all duration-300 flex items-center justify-center space-x-2 active:scale-[0.99] shadow-[0_0_15px_rgba(161,255,44,0.25)] hover:shadow-[0_0_20px_rgba(161,255,44,0.15)] cursor-pointer"
+                className="w-full bg-[#9B2226] text-white hover:bg-white hover:text-[#9B2226] hover:border-[#9B2226] text-xs font-mono font-bold uppercase tracking-widest py-3 border border-transparent transition-all duration-300 flex items-center justify-center space-x-2 active:scale-[0.99] shadow-[0_0_15px_rgba(155,34,38,0.12)] hover:shadow-[0_0_20px_rgba(155,34,38,0.08)] cursor-pointer"
               >
                 I've found my VIN
               </button>

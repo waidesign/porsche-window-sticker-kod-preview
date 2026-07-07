@@ -47,22 +47,22 @@ export default function HowItWorks({ onOpenVinGuide }: HowItWorksProps) {
   };
 
   return (
-    <section id="how-it-works" className="py-24 bg-zinc-950 border-b border-zinc-900 no-print">
+    <section id="how-it-works" className="py-24 bg-zinc-50 border-b border-zinc-100 no-print">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Title & Description */}
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-zinc-900 mb-6 leading-tight">
             How Do I Get the Window Sticker for My Porsche?
           </h2>
-          <p className="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
+          <p className="text-zinc-600 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
             Accessing your Porsche window sticker is simple with the right methods. To get one for a Porsche you are interested in, you can get one with a Porsche window sticker by VIN lookup. If the VIN is unavailable, you can also use the license plate number or the Porsche’s year, make, and model.
           </p>
         </div>
 
         {/* Subtitle */}
         <div className="text-center mb-10">
-          <h3 className="font-display text-lg sm:text-xl font-bold text-zinc-200 tracking-wide">
+          <h3 className="font-display text-lg sm:text-xl font-bold text-zinc-800 tracking-wide">
             Follow these steps to obtain your window sticker:
           </h3>
         </div>
@@ -72,21 +72,21 @@ export default function HowItWorks({ onOpenVinGuide }: HowItWorksProps) {
           {steps.map((st, idx) => (
             <div 
               key={idx} 
-              className="bg-zinc-900/20 border border-zinc-800/80 hover:border-[#A1FF2C]/40 transition-all duration-300 p-8 rounded-none flex flex-col justify-start min-h-[240px] shadow-sm relative group"
+              className="bg-zinc-100/20 border border-zinc-200/80 hover:border-[#9B2226]/40 transition-all duration-300 p-8 rounded-none flex flex-col justify-start min-h-[240px] shadow-sm relative group"
             >
-              <div className="absolute top-4 right-4 text-[10px] font-mono font-bold text-zinc-600 group-hover:text-[#A1FF2C] transition-colors">
+              <div className="absolute top-4 right-4 text-[10px] font-mono font-bold text-zinc-400 group-hover:text-[#9B2226] transition-colors">
                 STEP {(idx + 1).toString().padStart(2, '0')}
               </div>
-              <h4 className="font-display text-lg font-bold text-white mb-3 pt-2">
+              <h4 className="font-display text-lg font-bold text-zinc-900 mb-3 pt-2">
                 {st.title}
               </h4>
-              <p className="text-sm text-zinc-400 leading-relaxed mb-4">
+              <p className="text-sm text-zinc-600 leading-relaxed mb-4">
                 {idx === 1 ? (
                   <>
                     <button
                       type="button"
                       onClick={scrollToLookup}
-                      className="text-[#A1FF2C] hover:underline underline-offset-2 font-semibold cursor-pointer inline-block"
+                      className="text-[#9B2226] hover:underline underline-offset-2 font-semibold cursor-pointer inline-block"
                     >
                       Enter the VIN
                     </button>{" "}
@@ -100,7 +100,7 @@ export default function HowItWorks({ onOpenVinGuide }: HowItWorksProps) {
                 <button
                   type="button"
                   onClick={onOpenVinGuide}
-                  className="mt-auto text-[11px] font-mono text-zinc-400 hover:text-[#A1FF2C] underline underline-offset-4 transition-colors uppercase tracking-wider font-semibold cursor-pointer text-left self-start"
+                  className="mt-auto text-[11px] font-mono text-zinc-600 hover:text-[#9B2226] underline underline-offset-4 transition-colors uppercase tracking-wider font-semibold cursor-pointer text-left self-start"
                 >
                   Where can I find my Porsche VIN?
                 </button>
@@ -110,9 +110,9 @@ export default function HowItWorks({ onOpenVinGuide }: HowItWorksProps) {
         </div>
 
         {/* New sub-section for additional ways */}
-        <div className="border-t border-zinc-900 pt-20">
+        <div className="border-t border-zinc-100 pt-20">
           <div className="text-center max-w-4xl mx-auto mb-14">
-            <h3 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-snug">
+            <h3 className="font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-900 leading-snug">
               Once you have the window sticker, you can thoroughly review all the details about your vehicle. Additional ways to obtain this document include:
             </h3>
           </div>
@@ -122,12 +122,12 @@ export default function HowItWorks({ onOpenVinGuide }: HowItWorksProps) {
             {additionalWays.map((item, idx) => (
               <div 
                 key={idx}
-                className="bg-zinc-900/40 border border-zinc-800/80 hover:border-[#A1FF2C]/40 transition-all duration-300 p-8 rounded-none flex flex-col justify-start min-h-[240px] group"
+                className="bg-zinc-100/40 border border-zinc-200/80 hover:border-[#9B2226]/40 transition-all duration-300 p-8 rounded-none flex flex-col justify-start min-h-[240px] group"
               >
-                <h4 className="font-display text-xl font-bold text-white mb-4">
+                <h4 className="font-display text-xl font-bold text-zinc-900 mb-4">
                   {item.title}
                 </h4>
-                <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
+                <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">
                   {item.text}
                 </p>
               </div>
@@ -138,7 +138,7 @@ export default function HowItWorks({ onOpenVinGuide }: HowItWorksProps) {
           <div className="flex justify-center">
             <button
               onClick={scrollToLookup}
-              className="px-10 py-4 bg-[#A1FF2C] hover:bg-black hover:text-[#A1FF2C] hover:border-[#A1FF2C] text-black font-mono font-bold uppercase tracking-widest transition-all duration-300 rounded-none flex items-center justify-center space-x-2 border border-transparent active:scale-[0.99] shadow-[0_0_15px_rgba(161,255,44,0.3)]"
+              className="px-10 py-4 bg-[#9B2226] hover:bg-white hover:text-[#9B2226] hover:border-[#9B2226] text-white font-mono font-bold uppercase tracking-widest transition-all duration-300 rounded-none flex items-center justify-center space-x-2 border border-transparent active:scale-[0.99] shadow-[0_0_15px_rgba(155,34,38,0.15)]"
             >
               <span>Get a Porsche Window Sticker</span>
             </button>

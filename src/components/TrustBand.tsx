@@ -5,28 +5,28 @@ export default function TrustBand() {
   const stats = [
     {
       id: "stat-models",
-      icon: <Award className="w-5 h-5 text-zinc-300" />,
+      icon: <Award className="w-5 h-5 text-zinc-700" />,
       value: "100%",
       label: "Porsche Coverage",
       desc: "All models 1990-2026",
     },
     {
       id: "stat-vins",
-      icon: <Cpu className="w-5 h-5 text-zinc-300" />,
+      icon: <Cpu className="w-5 h-5 text-zinc-700" />,
       value: "250K+",
       label: "VINs Decoded",
       desc: "Instant precision archival query",
     },
     {
       id: "stat-delivery",
-      icon: <ShieldAlert className="w-5 h-5 text-zinc-300" />,
+      icon: <ShieldAlert className="w-5 h-5 text-zinc-700" />,
       value: "Instant",
       label: "Archival Delivery",
       desc: "Download and print instantly",
     },
     {
       id: "stat-satisfaction",
-      icon: <Star className="w-5 h-5 text-zinc-300" />,
+      icon: <Star className="w-5 h-5 text-zinc-700" />,
       value: "99.8%",
       label: "Sticker Accuracy",
       desc: "Verified sticker specs",
@@ -34,9 +34,9 @@ export default function TrustBand() {
   ];
 
   return (
-    <section className="bg-zinc-950 border-y border-zinc-800 py-10 relative z-10 no-print">
+    <section className="bg-zinc-50 border-y border-zinc-200 py-10 relative z-10 no-print">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 divide-y lg:divide-y-0 lg:divide-x divide-zinc-800">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 divide-y lg:divide-y-0 lg:divide-x divide-zinc-200">
           {stats.map((stat, idx) => (
             <div
               key={stat.id}
@@ -44,14 +44,14 @@ export default function TrustBand() {
                 idx > 1 ? "pt-6 lg:pt-0" : idx > 0 ? "pt-6 sm:pt-0" : ""
               }`}
             >
-              <div className="p-3 bg-zinc-900 border border-zinc-800 group-hover:border-[#A1FF2C] transition-all duration-300">
+              <div className="p-3 bg-zinc-100 border border-zinc-200 group-hover:border-[#9B2226] transition-all duration-300">
                 {stat.icon}
               </div>
               <div>
-                <p className="text-2xl font-display font-extrabold tracking-tight text-white group-hover:text-[#A1FF2C] transition-colors">
+                <p className="text-2xl font-display font-extrabold tracking-tight text-zinc-900 group-hover:text-[#9B2226] transition-colors">
                   {stat.value}
                 </p>
-                <p className="text-[10px] font-mono font-bold text-zinc-400 tracking-wider uppercase mt-1">
+                <p className="text-[10px] font-mono font-bold text-zinc-600 tracking-wider uppercase mt-1">
                   {stat.label}
                 </p>
                 <p className="text-xs text-zinc-500 mt-1 leading-snug">{stat.desc}</p>

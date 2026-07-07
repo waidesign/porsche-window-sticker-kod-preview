@@ -6,14 +6,16 @@
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   
-  --color-porsche-red: #A1FF2C;
+  --color-porsche-red: #9B2226;
+  --color-porsche-gold: #8A6B28;
+  --color-porsche-gold-fill: #C9A227;
   --color-porsche-silver: #E4E4E7;
   --color-porsche-gray: #71717A;
 }
 
 @layer base {
   body {
-    @apply font-sans bg-[#09090B] text-[#FAFAFA] antialiased selection:bg-[#A1FF2C] selection:text-black;
+    @apply font-sans bg-[#FFFFFF] text-[#18181B] antialiased selection:bg-[#9B2226] selection:text-white;
   }
 }
 
@@ -21,8 +23,8 @@
 .cyber-grid {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
 }
 
 .glow-card {
@@ -34,7 +36,7 @@
   content: '';
   position: absolute;
   inset: -1px;
-  background: linear-gradient(135deg, rgba(161, 255, 44, 0.25), rgba(228, 228, 231, 0.25), transparent);
+  background: linear-gradient(135deg, rgba(155, 34, 38, 0.15), rgba(228, 228, 231, 0.4), transparent);
   z-index: -1;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -46,13 +48,13 @@
 }
 
 .premium-gradient-text {
-  background: linear-gradient(135deg, #FFFFFF 30%, #A1A1AA 100%);
+  background: linear-gradient(135deg, #18181B 30%, #71717A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .tech-border {
-  border-image: linear-gradient(to right, #A1FF2C, #E4E4E7, transparent) 1;
+  border-image: linear-gradient(to right, #9B2226, #E4E4E7, transparent) 1;
 }
 
 /* Custom Print Styles for Porsche Window Sticker */

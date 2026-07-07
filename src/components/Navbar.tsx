@@ -44,16 +44,16 @@ export default function Navbar() {
       id="navbar"
       className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#09090B]/90 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.4)] border-b border-[#A1FF2C]/20 py-2.5"
-          : "bg-[#09090B] border-b border-[#3F3F46]/30 py-4"
+          ? "bg-[#FFFFFF]/90 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.4)] border-b border-[#8A6B28]/20 py-2.5"
+          : "bg-[#FFFFFF] border-b border-[#D4D4D8]/30 py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="/" className="flex items-center group">
-            <div className="flex items-center justify-center w-9 h-9 bg-black border border-zinc-800 rounded-none transition-all duration-300 group-hover:border-[#A1FF2C] group-hover:shadow-[0_0_15px_rgba(161,255,44,0.3)]">
-              <Shield className="w-5 h-5 text-zinc-300 group-hover:text-[#A1FF2C] transition-colors" />
+            <div className="flex items-center justify-center w-9 h-9 bg-black border border-zinc-200 rounded-none transition-all duration-300 group-hover:border-[#8A6B28] group-hover:shadow-[0_0_15px_rgba(138,107,40,0.15)]">
+              <Shield className="w-5 h-5 text-zinc-300 group-hover:text-[#8A6B28] transition-colors" />
             </div>
           </a>
 
@@ -63,12 +63,12 @@ export default function Navbar() {
               href="/vin-decoder"
               className={`text-xs font-mono font-bold tracking-wider uppercase transition-colors relative group py-1 ${
                 isActive("/vin-decoder")
-                  ? "text-[#A1FF2C]"
-                  : "text-gray-400 hover:text-white"
+                  ? "text-[#8A6B28]"
+                  : "text-gray-600 hover:text-zinc-900"
               }`}
             >
               VIN Decoder
-              <span className={`absolute bottom-0 left-0 h-[2px] bg-[#A1FF2C] transition-all duration-300 ${
+              <span className={`absolute bottom-0 left-0 h-[2px] bg-[#8A6B28] transition-all duration-300 ${
                 isActive("/vin-decoder") ? "w-full" : "w-0 group-hover:w-full"
               }`}></span>
             </a>
@@ -76,12 +76,12 @@ export default function Navbar() {
               href="/model-specs"
               className={`text-xs font-mono font-bold tracking-wider uppercase transition-colors relative group py-1 ${
                 isActive("/model-specs")
-                  ? "text-[#A1FF2C]"
-                  : "text-gray-400 hover:text-white"
+                  ? "text-[#8A6B28]"
+                  : "text-gray-600 hover:text-zinc-900"
               }`}
             >
               Model Specs
-              <span className={`absolute bottom-0 left-0 h-[2px] bg-[#A1FF2C] transition-all duration-300 ${
+              <span className={`absolute bottom-0 left-0 h-[2px] bg-[#8A6B28] transition-all duration-300 ${
                 isActive("/model-specs") ? "w-full" : "w-0 group-hover:w-full"
               }`}></span>
             </a>
@@ -89,12 +89,12 @@ export default function Navbar() {
               href="/warranty"
               className={`text-xs font-mono font-bold tracking-wider uppercase transition-colors relative group py-1 ${
                 isActive("/warranty")
-                  ? "text-[#A1FF2C]"
-                  : "text-gray-400 hover:text-white"
+                  ? "text-[#8A6B28]"
+                  : "text-gray-600 hover:text-zinc-900"
               }`}
             >
               Warranty
-              <span className={`absolute bottom-0 left-0 h-[2px] bg-[#A1FF2C] transition-all duration-300 ${
+              <span className={`absolute bottom-0 left-0 h-[2px] bg-[#8A6B28] transition-all duration-300 ${
                 isActive("/warranty") ? "w-full" : "w-0 group-hover:w-full"
               }`}></span>
             </a>
@@ -105,21 +105,21 @@ export default function Navbar() {
                 onClick={() => setToolsDropdownOpen(!toolsDropdownOpen)}
                 className={`text-xs font-mono font-bold tracking-wider uppercase transition-colors flex items-center space-x-1 py-1 cursor-pointer focus:outline-none ${
                   ["/build-sheet", "/paint-codes", "/options", "/specs"].includes(currentPath)
-                    ? "text-[#A1FF2C]"
-                    : "text-gray-400 hover:text-white"
+                    ? "text-[#8A6B28]"
+                    : "text-gray-600 hover:text-zinc-900"
                 }`}
               >
                 <span>Tools</span>
-                <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${toolsDropdownOpen ? "rotate-180 text-[#A1FF2C]" : ""}`} />
+                <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${toolsDropdownOpen ? "rotate-180 text-[#8A6B28]" : ""}`} />
               </button>
               
               {/* Dropdown Menu */}
               {toolsDropdownOpen && (
-                <div className="absolute left-0 mt-2 w-64 bg-[#09090B] border border-zinc-800 shadow-[0_10px_30px_rgba(0,0,0,0.8)] py-2 z-50">
+                <div className="absolute left-0 mt-2 w-64 bg-[#FFFFFF] border border-zinc-200 shadow-[0_10px_30px_rgba(0,0,0,0.8)] py-2 z-50">
                   <a
                     href="/build-sheet"
                     className={`block px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider transition-colors ${
-                      currentPath === "/build-sheet" ? "text-[#A1FF2C] bg-zinc-900/50" : "text-gray-400 hover:text-[#A1FF2C] hover:bg-zinc-900/50"
+                      currentPath === "/build-sheet" ? "text-[#8A6B28] bg-zinc-100/50" : "text-gray-600 hover:text-[#8A6B28] hover:bg-zinc-100/50"
                     }`}
                   >
                     Build Sheet
@@ -127,7 +127,7 @@ export default function Navbar() {
                   <a
                     href="/paint-codes"
                     className={`block px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider transition-colors ${
-                      currentPath === "/paint-codes" ? "text-[#A1FF2C] bg-zinc-900/50" : "text-gray-400 hover:text-[#A1FF2C] hover:bg-zinc-900/50"
+                      currentPath === "/paint-codes" ? "text-[#8A6B28] bg-zinc-100/50" : "text-gray-600 hover:text-[#8A6B28] hover:bg-zinc-100/50"
                     }`}
                   >
                     Paint Code Lookup
@@ -135,7 +135,7 @@ export default function Navbar() {
                   <a
                     href="/options"
                     className={`block px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider transition-colors ${
-                      currentPath === "/options" ? "text-[#A1FF2C] bg-zinc-900/50" : "text-gray-400 hover:text-[#A1FF2C] hover:bg-zinc-900/50"
+                      currentPath === "/options" ? "text-[#8A6B28] bg-zinc-100/50" : "text-gray-600 hover:text-[#8A6B28] hover:bg-zinc-100/50"
                     }`}
                   >
                     Options Decoder
@@ -143,7 +143,7 @@ export default function Navbar() {
                   <a
                     href="/warranty"
                     className={`block px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider transition-colors ${
-                      currentPath === "/warranty" ? "text-[#A1FF2C] bg-zinc-900/50" : "text-gray-400 hover:text-[#A1FF2C] hover:bg-zinc-900/50"
+                      currentPath === "/warranty" ? "text-[#8A6B28] bg-zinc-100/50" : "text-gray-600 hover:text-[#8A6B28] hover:bg-zinc-100/50"
                     }`}
                   >
                     Warranty Check
@@ -151,7 +151,7 @@ export default function Navbar() {
                   <a
                     href="/specs"
                     className={`block px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider transition-colors ${
-                      currentPath === "/specs" ? "text-[#A1FF2C] bg-zinc-900/50" : "text-gray-400 hover:text-[#A1FF2C] hover:bg-zinc-900/50"
+                      currentPath === "/specs" ? "text-[#8A6B28] bg-zinc-100/50" : "text-gray-600 hover:text-[#8A6B28] hover:bg-zinc-100/50"
                     }`}
                   >
                     Specifications
@@ -159,7 +159,7 @@ export default function Navbar() {
                   <a
                     href="/vin-decoder"
                     className={`block px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider transition-colors ${
-                      isActive("/vin-decoder") ? "text-[#A1FF2C] bg-zinc-900/50" : "text-gray-400 hover:text-[#A1FF2C] hover:bg-zinc-900/50"
+                      isActive("/vin-decoder") ? "text-[#8A6B28] bg-zinc-100/50" : "text-gray-600 hover:text-[#8A6B28] hover:bg-zinc-100/50"
                     }`}
                   >
                     VIN Decoder
@@ -171,12 +171,12 @@ export default function Navbar() {
 
           {/* Desktop Right CTA */}
           <div className="hidden md:flex items-center space-x-6">
-            <button className="text-xs font-mono tracking-widest uppercase font-bold text-gray-400 hover:text-[#A1FF2C] transition-colors">
+            <button className="text-xs font-mono tracking-widest uppercase font-bold text-gray-600 hover:text-[#8A6B28] transition-colors">
               login
             </button>
             <a
               href="#lookup"
-              className="bg-[#A1FF2C] text-black hover:bg-black hover:text-[#A1FF2C] hover:border-[#A1FF2C] text-[10px] font-mono font-bold uppercase tracking-widest px-5 py-3 rounded-none border border-transparent transition-all duration-300 flex items-center justify-center shadow-[0_0_15px_rgba(161,255,44,0.25)] hover:shadow-[0_0_20px_rgba(161,255,44,0.15)]"
+              className="bg-[#9B2226] text-white hover:bg-white hover:text-[#9B2226] hover:border-[#9B2226] text-[10px] font-mono font-bold uppercase tracking-widest px-5 py-3 rounded-none border border-transparent transition-all duration-300 flex items-center justify-center shadow-[0_0_15px_rgba(155,34,38,0.12)] hover:shadow-[0_0_20px_rgba(155,34,38,0.08)]"
             >
               <span>Signup</span>
             </a>
@@ -186,7 +186,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white hover:text-[#A1FF2C] p-1.5 focus:outline-none border border-zinc-800"
+              className="text-zinc-900 hover:text-[#8A6B28] p-1.5 focus:outline-none border border-zinc-200"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
@@ -201,15 +201,15 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#09090B] border-t border-[#A1FF2C]/20 px-4 pt-4 pb-6 space-y-4">
+        <div className="md:hidden bg-[#FFFFFF] border-t border-[#8A6B28]/20 px-4 pt-4 pb-6 space-y-4">
           <nav className="flex flex-col space-y-3">
             <a
               href="/vin-decoder"
               onClick={() => setMobileMenuOpen(false)}
-              className={`text-xs font-mono font-bold uppercase tracking-widest py-2 border-b border-gray-800 block ${
+              className={`text-xs font-mono font-bold uppercase tracking-widest py-2 border-b border-gray-200 block ${
                 isActive("/vin-decoder")
-                  ? "text-[#A1FF2C]"
-                  : "text-gray-400 hover:text-white"
+                  ? "text-[#8A6B28]"
+                  : "text-gray-600 hover:text-zinc-900"
               }`}
             >
               VIN Decoder
@@ -217,10 +217,10 @@ export default function Navbar() {
             <a
               href="/model-specs"
               onClick={() => setMobileMenuOpen(false)}
-              className={`text-xs font-mono font-bold uppercase tracking-widest py-2 border-b border-gray-800 block ${
+              className={`text-xs font-mono font-bold uppercase tracking-widest py-2 border-b border-gray-200 block ${
                 isActive("/model-specs")
-                  ? "text-[#A1FF2C]"
-                  : "text-gray-400 hover:text-white"
+                  ? "text-[#8A6B28]"
+                  : "text-gray-600 hover:text-zinc-900"
               }`}
             >
               Model Specs
@@ -228,25 +228,25 @@ export default function Navbar() {
             <a
               href="/warranty"
               onClick={() => setMobileMenuOpen(false)}
-              className={`text-xs font-mono font-bold uppercase tracking-widest py-2 border-b border-gray-800 block ${
+              className={`text-xs font-mono font-bold uppercase tracking-widest py-2 border-b border-gray-200 block ${
                 isActive("/warranty")
-                  ? "text-[#A1FF2C]"
-                  : "text-gray-400 hover:text-white"
+                  ? "text-[#8A6B28]"
+                  : "text-gray-600 hover:text-zinc-900"
               }`}
             >
               Warranty
             </a>
             
             {/* Tools Collapsible */}
-            <div className="border-b border-gray-800 py-2">
+            <div className="border-b border-gray-200 py-2">
               <button
                 onClick={() => setMobileToolsOpen(!mobileToolsOpen)}
                 className={`w-full text-left text-xs font-mono font-bold uppercase tracking-widest flex items-center justify-between focus:outline-none ${
-                  ["/build-sheet", "/paint-codes", "/options", "/specs"].includes(currentPath) ? "text-[#A1FF2C]" : "text-gray-400 hover:text-white"
+                  ["/build-sheet", "/paint-codes", "/options", "/specs"].includes(currentPath) ? "text-[#8A6B28]" : "text-gray-600 hover:text-zinc-900"
                 }`}
               >
                 <span>Tools</span>
-                <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${mobileToolsOpen ? "rotate-180 text-[#A1FF2C]" : ""}`} />
+                <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${mobileToolsOpen ? "rotate-180 text-[#8A6B28]" : ""}`} />
               </button>
               {mobileToolsOpen && (
                 <div className="mt-2 pl-4 space-y-2">
@@ -254,7 +254,7 @@ export default function Navbar() {
                     href="/build-sheet"
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block text-[11px] font-mono font-bold uppercase tracking-wider py-1 ${
-                      currentPath === "/build-sheet" ? "text-[#A1FF2C]" : "text-zinc-500 hover:text-[#A1FF2C]"
+                      currentPath === "/build-sheet" ? "text-[#8A6B28]" : "text-zinc-500 hover:text-[#8A6B28]"
                     }`}
                   >
                     Build Sheet
@@ -263,7 +263,7 @@ export default function Navbar() {
                     href="/paint-codes"
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block text-[11px] font-mono font-bold uppercase tracking-wider py-1 ${
-                      currentPath === "/paint-codes" ? "text-[#A1FF2C]" : "text-zinc-500 hover:text-[#A1FF2C]"
+                      currentPath === "/paint-codes" ? "text-[#8A6B28]" : "text-zinc-500 hover:text-[#8A6B28]"
                     }`}
                   >
                     Paint Code Lookup
@@ -272,7 +272,7 @@ export default function Navbar() {
                     href="/options"
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block text-[11px] font-mono font-bold uppercase tracking-wider py-1 ${
-                      currentPath === "/options" ? "text-[#A1FF2C]" : "text-zinc-500 hover:text-[#A1FF2C]"
+                      currentPath === "/options" ? "text-[#8A6B28]" : "text-zinc-500 hover:text-[#8A6B28]"
                     }`}
                   >
                     Options Decoder
@@ -281,7 +281,7 @@ export default function Navbar() {
                     href="/warranty"
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block text-[11px] font-mono font-bold uppercase tracking-wider py-1 ${
-                      currentPath === "/warranty" ? "text-[#A1FF2C]" : "text-zinc-500 hover:text-[#A1FF2C]"
+                      currentPath === "/warranty" ? "text-[#8A6B28]" : "text-zinc-500 hover:text-[#8A6B28]"
                     }`}
                   >
                     Warranty Check
@@ -290,7 +290,7 @@ export default function Navbar() {
                     href="/specs"
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block text-[11px] font-mono font-bold uppercase tracking-wider py-1 ${
-                      currentPath === "/specs" ? "text-[#A1FF2C]" : "text-zinc-500 hover:text-[#A1FF2C]"
+                      currentPath === "/specs" ? "text-[#8A6B28]" : "text-zinc-500 hover:text-[#8A6B28]"
                     }`}
                   >
                     Specifications
@@ -299,7 +299,7 @@ export default function Navbar() {
                     href="/vin-decoder"
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block text-[11px] font-mono font-bold uppercase tracking-wider py-1 ${
-                      isActive("/vin-decoder") ? "text-[#A1FF2C]" : "text-zinc-500 hover:text-[#A1FF2C]"
+                      isActive("/vin-decoder") ? "text-[#8A6B28]" : "text-zinc-500 hover:text-[#8A6B28]"
                     }`}
                   >
                     VIN Decoder
@@ -311,14 +311,14 @@ export default function Navbar() {
           <div className="flex flex-col space-y-3 pt-2">
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="text-center text-xs font-mono font-bold uppercase tracking-wider text-gray-400 py-2.5 border border-gray-800 hover:border-white transition-all"
+              className="text-center text-xs font-mono font-bold uppercase tracking-wider text-gray-600 py-2.5 border border-gray-200 hover:border-zinc-900 transition-all"
             >
               login
             </button>
             <a
               href="#lookup"
               onClick={() => setMobileMenuOpen(false)}
-              className="text-center bg-[#A1FF2C] text-black py-2.5 text-xs font-mono font-bold uppercase tracking-widest hover:bg-black hover:text-[#A1FF2C] hover:border-[#A1FF2C] border border-transparent transition-all block font-bold"
+              className="text-center bg-[#9B2226] text-white py-2.5 text-xs font-mono font-bold uppercase tracking-widest hover:bg-white hover:text-[#9B2226] hover:border-[#9B2226] border border-transparent transition-all block font-bold"
             >
               Signup
             </a>

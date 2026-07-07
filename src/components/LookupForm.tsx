@@ -59,19 +59,19 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
   };
 
   return (
-    <div className="bg-zinc-950/80 backdrop-blur-md border border-zinc-800 p-6 sm:p-8 w-full max-w-[480px] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)] relative glow-card">
-      {/* Accent top green & silver double line */}
-      <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-[#A1FF2C] via-white to-transparent"></div>
-      
+    <div className="bg-white/35 backdrop-blur-md backdrop-saturate-150 border border-white/60 rounded-none p-6 sm:p-8 w-full max-w-[480px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.7)] relative overflow-hidden">
+      {/* Glass sheen overlay */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-white/50 via-white/5 to-transparent"></div>
+
       {/* Confident Pills Tab Toggles */}
-      <div className="flex bg-zinc-900 p-1 mb-6 border border-zinc-800">
+      <div className="relative flex bg-white/40 backdrop-blur-sm p-1 mb-6 border border-white/50 rounded-none">
         <button
           type="button"
           onClick={() => setActiveTab("vin")}
           className={`flex-1 text-center py-2 text-[10px] font-mono font-bold uppercase tracking-wider transition-all rounded-none ${
             activeTab === "vin"
-              ? "bg-[#A1FF2C] text-black shadow-[0_0_15px_rgba(161,255,44,0.3)]"
-              : "text-zinc-500 hover:text-zinc-200"
+              ? "bg-[#9B2226] text-white shadow-[0_0_15px_rgba(155,34,38,0.15)]"
+              : "text-black hover:text-black"
           }`}
         >
           VIN
@@ -81,8 +81,8 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
           onClick={() => setActiveTab("plate")}
           className={`flex-1 text-center py-2 text-[10px] font-mono font-bold uppercase tracking-wider transition-all rounded-none ${
             activeTab === "plate"
-              ? "bg-[#A1FF2C] text-black shadow-[0_0_15px_rgba(161,255,44,0.3)]"
-              : "text-zinc-500 hover:text-zinc-200"
+              ? "bg-[#9B2226] text-white shadow-[0_0_15px_rgba(155,34,38,0.15)]"
+              : "text-black hover:text-black"
           }`}
         >
           PLATE
@@ -92,8 +92,8 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
           onClick={() => setActiveTab("ymm")}
           className={`flex-1 text-center py-2 text-[10px] font-mono font-bold uppercase tracking-wider transition-all rounded-none ${
             activeTab === "ymm"
-              ? "bg-[#A1FF2C] text-black shadow-[0_0_15px_rgba(161,255,44,0.3)]"
-              : "text-zinc-500 hover:text-zinc-200"
+              ? "bg-[#9B2226] text-white shadow-[0_0_15px_rgba(155,34,38,0.15)]"
+              : "text-black hover:text-black"
           }`}
         >
           MODEL
@@ -101,11 +101,11 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
       </div>
 
       {/* Form implementation */}
-      <form onSubmit={handleSubmit} className="space-y-5">
+      <form onSubmit={handleSubmit} className="relative z-10 space-y-5">
         
         {activeTab === "vin" && (
           <div className="space-y-2">
-            <label htmlFor="vin-input-form" className="block text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-400">
+            <label htmlFor="vin-input-form" className="block text-[10px] font-mono font-bold uppercase tracking-wider text-black">
               Chassis Identification VIN
             </label>
             <div className="relative">
@@ -116,14 +116,14 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
                 value={vin}
                 onChange={(e) => setVin(e.target.value.toUpperCase())}
                 placeholder="e.g. WP0AC2A9XFS1XXXXX"
-                className="w-full border border-zinc-800 px-4 py-3.5 pr-10 text-xs font-mono bg-zinc-900/50 text-white focus:bg-zinc-900 focus:outline-none focus:border-[#A1FF2C] transition-all rounded-none"
+                className="w-full border border-white/50 px-4 py-3.5 pr-10 text-xs font-mono bg-white/40 text-black focus:bg-white/60 focus:outline-none focus:border-[#9B2226] transition-all rounded-none"
               />
-              <Search className="absolute right-3.5 top-3.5 w-4 h-4 text-zinc-500" />
+              <Search className="absolute right-3.5 top-3.5 w-4 h-4 text-black" />
             </div>
             {/* Inline helper text */}
             <div className="flex items-start space-x-2 mt-2">
-              <Info className="w-3.5 h-3.5 text-[#A1FF2C] flex-shrink-0 mt-0.5" />
-              <p className="text-[10px] text-zinc-500 leading-normal font-mono">
+              <Info className="w-3.5 h-3.5 text-[#9B2226] flex-shrink-0 mt-0.5" />
+              <p className="text-[10px] text-black leading-normal font-mono">
                 Provide a standard 17-character Porsche VIN. Found stamped on driver-side windshield or B-pillar plate.
               </p>
             </div>
@@ -133,7 +133,7 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
         {activeTab === "plate" && (
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <label htmlFor="plate-input-form" className="block text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-400">
+              <label htmlFor="plate-input-form" className="block text-[10px] font-mono font-bold uppercase tracking-wider text-black">
                 License Plate Registration
               </label>
               <input
@@ -142,11 +142,11 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
                 value={plate}
                 onChange={(e) => setPlate(e.target.value.toUpperCase())}
                 placeholder="e.g. 911GT3RS"
-                className="w-full border border-zinc-800 px-4 py-3.5 text-xs font-mono bg-zinc-900/50 text-white focus:bg-zinc-900 focus:outline-none focus:border-[#A1FF2C] transition-all rounded-none"
+                className="w-full border border-white/50 px-4 py-3.5 text-xs font-mono bg-white/40 text-black focus:bg-white/60 focus:outline-none focus:border-[#9B2226] transition-all rounded-none"
               />
             </div>
             <div className="space-y-2">
-              <label htmlFor="state-select-form" className="block text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-400">
+              <label htmlFor="state-select-form" className="block text-[10px] font-mono font-bold uppercase tracking-wider text-black">
                 Registration State
               </label>
               <div className="relative">
@@ -154,15 +154,15 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
                   id="state-select-form"
                   value={state}
                   onChange={(e) => setState(e.target.value)}
-                  className="w-full appearance-none border border-zinc-800 pl-4 pr-10 py-3.5 text-xs bg-zinc-900/50 text-white focus:bg-zinc-900 focus:outline-none focus:border-[#A1FF2C] transition-all rounded-none font-mono"
+                  className="w-full appearance-none border border-white/50 pl-4 pr-10 py-3.5 text-xs bg-white/40 text-black focus:bg-white/60 focus:outline-none focus:border-[#9B2226] transition-all rounded-none font-mono"
                 >
                   {STATES_LIST.map((st) => (
-                    <option key={st} value={st} className="bg-[#09090B]">
+                    <option key={st} value={st} className="bg-[#FFFFFF]">
                       {st}
                     </option>
                   ))}
                 </select>
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4 text-zinc-400">
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4 text-black">
                   <ChevronDown className="h-4 w-4" />
                 </div>
               </div>
@@ -174,7 +174,7 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <label htmlFor="year-select-form" className="block text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-400">
+                <label htmlFor="year-select-form" className="block text-[10px] font-mono font-bold uppercase tracking-wider text-black">
                   Model Year
                 </label>
                 <div className="relative">
@@ -182,21 +182,21 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
                     id="year-select-form"
                     value={year}
                     onChange={(e) => setYear(parseInt(e.target.value))}
-                    className="w-full appearance-none border border-zinc-800 pl-4 pr-10 py-3.5 text-xs bg-zinc-900/50 text-white focus:bg-zinc-900 focus:outline-none focus:border-[#A1FF2C] rounded-none font-mono"
+                    className="w-full appearance-none border border-white/50 pl-4 pr-10 py-3.5 text-xs bg-white/40 text-black focus:bg-white/60 focus:outline-none focus:border-[#9B2226] rounded-none font-mono"
                   >
                     {[2026, 2025, 2024, 2023, 2022, 2021, 2020].map((yr) => (
-                      <option key={yr} value={yr} className="bg-[#09090B]">
+                      <option key={yr} value={yr} className="bg-[#FFFFFF]">
                         {yr}
                       </option>
                     ))}
                   </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4 text-zinc-400">
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4 text-black">
                     <ChevronDown className="h-4 w-4" />
                   </div>
                 </div>
               </div>
               <div className="space-y-2">
-                <label htmlFor="model-select-form" className="block text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-400">
+                <label htmlFor="model-select-form" className="block text-[10px] font-mono font-bold uppercase tracking-wider text-black">
                   Model Lineup
                 </label>
                 <div className="relative">
@@ -204,21 +204,21 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
                     id="model-select-form"
                     value={model}
                     onChange={(e) => handleModelChange(e.target.value)}
-                    className="w-full appearance-none border border-zinc-800 pl-4 pr-10 py-3.5 text-xs bg-zinc-900/50 text-white focus:bg-zinc-900 focus:outline-none focus:border-[#A1FF2C] rounded-none font-mono"
+                    className="w-full appearance-none border border-white/50 pl-4 pr-10 py-3.5 text-xs bg-white/40 text-black focus:bg-white/60 focus:outline-none focus:border-[#9B2226] rounded-none font-mono"
                   >
-                    <option value="911" className="bg-[#09090B]">911 Sports Car</option>
-                    <option value="Taycan" className="bg-[#09090B]">Taycan EV</option>
-                    <option value="718 Cayman" className="bg-[#09090B]">718 Cayman</option>
-                    <option value="Cayenne" className="bg-[#09090B]">Cayenne SUV</option>
+                    <option value="911" className="bg-[#FFFFFF]">911 Sports Car</option>
+                    <option value="Taycan" className="bg-[#FFFFFF]">Taycan EV</option>
+                    <option value="718 Cayman" className="bg-[#FFFFFF]">718 Cayman</option>
+                    <option value="Cayenne" className="bg-[#FFFFFF]">Cayenne SUV</option>
                   </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4 text-zinc-400">
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4 text-black">
                     <ChevronDown className="h-4 w-4" />
                   </div>
                 </div>
               </div>
             </div>
             <div className="space-y-2">
-              <label htmlFor="trim-select-form" className="block text-[10px] font-mono font-bold uppercase tracking-wider text-zinc-400">
+              <label htmlFor="trim-select-form" className="block text-[10px] font-mono font-bold uppercase tracking-wider text-black">
                 Factory Trim Level
               </label>
               <div className="relative">
@@ -226,15 +226,15 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
                   id="trim-select-form"
                   value={trim}
                   onChange={(e) => setTrim(e.target.value)}
-                  className="w-full appearance-none border border-zinc-800 pl-4 pr-10 py-3.5 text-xs bg-zinc-900/50 text-white focus:bg-zinc-900 focus:outline-none focus:border-[#A1FF2C] rounded-none font-semibold font-mono"
+                  className="w-full appearance-none border border-white/50 pl-4 pr-10 py-3.5 text-xs bg-white/40 text-black focus:bg-white/60 focus:outline-none focus:border-[#9B2226] rounded-none font-semibold font-mono"
                 >
                   {trimsMap[model]?.map((tr) => (
-                    <option key={tr} value={tr} className="bg-[#09090B]">
+                    <option key={tr} value={tr} className="bg-[#FFFFFF]">
                       {tr} ({model === "Taycan" ? "Electric" : "Petrol"})
                     </option>
                   ))}
                 </select>
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4 text-zinc-400">
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4 text-black">
                   <ChevronDown className="h-4 w-4" />
                 </div>
               </div>
@@ -246,7 +246,7 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
         <button
           type="submit"
           disabled={isLoading || (activeTab === "vin" && vin.length !== 17) || (activeTab === "plate" && !plate.trim())}
-          className="w-full bg-[#A1FF2C] text-black hover:bg-black hover:text-[#A1FF2C] hover:border-[#A1FF2C] text-xs font-mono font-bold uppercase tracking-widest py-4 rounded-none border border-transparent transition-all duration-300 flex items-center justify-center space-x-2 active:scale-[0.99] shadow-[0_0_15px_rgba(161,255,44,0.25)] hover:shadow-[0_0_20px_rgba(161,255,44,0.15)] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#A1FF2C] disabled:hover:text-black disabled:hover:border-transparent cursor-pointer"
+          className="w-full bg-[#9B2226] text-white hover:bg-white hover:text-[#9B2226] hover:border-[#9B2226] text-xs font-mono font-bold uppercase tracking-widest py-4 rounded-none border border-transparent transition-all duration-300 flex items-center justify-center space-x-2 active:scale-[0.99] shadow-[0_0_15px_rgba(155,34,38,0.12)] hover:shadow-[0_0_20px_rgba(155,34,38,0.08)] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#9B2226] disabled:hover:text-white disabled:hover:border-transparent cursor-pointer"
         >
           {isLoading ? (
             <>
@@ -261,12 +261,12 @@ export default function LookupForm({ onLookup, isLoading, onOpenVinGuide }: Look
 
       {/* Where can I find my Porsche VIN? link and popover trigger */}
       {activeTab === "vin" && onOpenVinGuide && (
-        <div className="mt-6 border-t border-zinc-800 pt-4 text-center">
+        <div className="relative z-10 mt-6 border-t border-white/50 pt-4 text-center">
           <button
             id="vin-lookup-guide-trigger-form"
             type="button"
             onClick={onOpenVinGuide}
-            className="text-[11px] font-mono text-zinc-400 hover:text-[#A1FF2C] underline underline-offset-4 transition-colors uppercase tracking-wider font-semibold cursor-pointer"
+            className="text-[11px] font-mono text-black hover:text-[#9B2226] underline underline-offset-4 transition-colors uppercase tracking-wider font-semibold cursor-pointer"
           >
             Where can I find my Porsche VIN?
           </button>

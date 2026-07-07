@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { ShieldAlert, Car, Search, Eye, Sparkles, CheckCircle, Info, ChevronDown, X } from "lucide-react";
+import { motion } from "motion/react";
+import { ShieldAlert, Car, Search, Eye, Sparkles, CheckCircle, Info, ChevronDown, X, ScanLine } from "lucide-react";
 import { LookupRequest, WindowStickerData } from "../types";
 import LookupForm from "./LookupForm";
 
@@ -9,6 +10,8 @@ import porscheGt3rsStickerImg from "../assets/images/porsche_gt3rs_sticker_17829
 import porscheTaycanStickerImg from "../assets/images/porsche_taycan_sticker_1782991975547.jpg";
 // @ts-ignore
 import porscheCaymanStickerImg from "../assets/images/porsche_cayman_sticker_1782991991694.jpg";
+// @ts-ignore
+import porscheHeroImg from "../assets/images/hero-section-image.jpg";
 
 interface HeroProps {
   onLookup: (request: LookupRequest) => void;
@@ -18,13 +21,13 @@ interface HeroProps {
 }
 
 const STATES_LIST = [
-  "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", 
-  "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", 
-  "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", 
-  "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", 
-  "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", 
-  "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", 
-  "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", 
+  "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
+  "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa",
+  "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan",
+  "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire",
+  "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
+  "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota",
+  "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia",
   "Wisconsin", "Wyoming"
 ];
 
@@ -139,7 +142,38 @@ const PRESETS = [
   }
 ];
 
+// Cycles the decode-ticker overlay through each preset's VIN -> model reveal
+function useDecodeTicker() {
+  const [index, setIndex] = useState(0);
+  const [phase, setPhase] = useState<"scanning" | "decoded">("scanning");
+
+  useEffect(() => {
+    setPhase("scanning");
+    const toDecoded = setTimeout(() => setPhase("decoded"), 1100);
+    const toNext = setTimeout(() => {
+      setIndex((i) => (i + 1) % PRESETS.length);
+    }, 3600);
+    return () => {
+      clearTimeout(toDecoded);
+      clearTimeout(toNext);
+    };
+  }, [index]);
+
+  return { preset: PRESETS[index], phase };
+}
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 16 },
+  show: (delay: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] },
+  }),
+};
+
 export default function Hero({ onLookup, isLoading, onSelectPreset, onOpenVinGuide }: HeroProps) {
+  const { preset: tickerPreset, phase: tickerPhase } = useDecodeTicker();
+
   // Quick preset loader
   const handlePresetClick = (presetData: WindowStickerData) => {
     if (onSelectPreset) {
@@ -151,71 +185,113 @@ export default function Hero({ onLookup, isLoading, onSelectPreset, onOpenVinGui
   };
 
   return (
-    <section id="lookup" className="relative min-h-[680px] flex items-center bg-[#09090B] py-16 lg:py-24 overflow-hidden border-b border-zinc-800/50 no-print cyber-grid">
-      
-      {/* Absolute Background Porsche Visual */}
-      <div className="absolute inset-0 z-0 hidden lg:block">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#09090B] via-[#09090B]/90 to-transparent w-[60%] z-10"></div>
-        <img
-          src="/src/assets/images/porsche_hero_1782984439212.jpg"
-          alt="Sleek Porsche sports car"
-          className="w-full h-full object-cover object-right opacity-65 mix-blend-lighten"
-          referrerPolicy="no-referrer"
-        />
-      </div>
+    <section id="lookup" className="relative bg-white border-b border-zinc-200/50 no-print overflow-hidden">
+      <div className="max-w-[1600px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 lg:items-stretch">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Hero Heading copy */}
-          <div className="lg:col-span-6 space-y-6 lg:pr-6">
-            <div className="inline-flex items-center space-x-2 bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded-none">
-              <span className="w-1.5 h-1.5 bg-[#A1FF2C] animate-pulse"></span>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-bold">
-                GERMAN ENGINEERING REGISTRY
-              </span>
-            </div>
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.05]">
-              Porsche Window <br />
-              <span className="premium-gradient-text">Sticker Decryptor</span>
-            </h1>
-            <p className="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-lg">
-              Reconstruct, personalize, and print high-fidelity window stickers for any Porsche model. Retrieve exact custom option lists, standard specs, and MSRP pricing directly from historical archives.
-            </p>
+          {/* LEFT: Hero Heading Copy */}
+          <div className="lg:col-span-6 flex flex-col justify-center px-4 sm:px-6 lg:pl-12 xl:pl-20 lg:pr-10 py-14 lg:py-24 relative z-20">
+            <motion.div
+              initial="hidden"
+              animate="show"
+              className="max-w-xl space-y-6"
+            >
+              <motion.div
+                custom={0}
+                variants={fadeUp}
+                className="inline-flex items-center space-x-2 bg-zinc-100 border border-zinc-200 px-3 py-1.5 rounded-none w-fit"
+              >
+                <span className="w-1.5 h-1.5 bg-[#8A6B28] animate-pulse"></span>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 font-bold">
+                  German Engineering Registry
+                </span>
+              </motion.div>
 
-            {/* Micro details features */}
-            <div className="flex flex-wrap gap-x-6 gap-y-3 text-xs text-zinc-400 font-mono">
-              <div className="flex items-center space-x-2 bg-zinc-950/60 border border-zinc-800 px-3 py-1.5">
-                <CheckCircle className="w-3.5 h-3.5 text-[#A1FF2C]" />
-                <span>100% SPEC VERIFIED</span>
-              </div>
-              <div className="flex items-center space-x-2 bg-zinc-950/60 border border-zinc-800 px-3 py-1.5">
-                <CheckCircle className="w-3.5 h-3.5 text-[#A1FF2C]" />
-                <span>OFFICIAL EPA METRICS</span>
-              </div>
-              <div className="flex items-center space-x-2 bg-zinc-950/60 border border-zinc-800 px-3 py-1.5">
-                <CheckCircle className="w-3.5 h-3.5 text-[#A1FF2C]" />
-                <span>VECTOR DESIGN PDF</span>
-              </div>
-            </div>
+              <motion.h1
+                custom={0.1}
+                variants={fadeUp}
+                className="font-display text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold tracking-tight text-zinc-900 leading-[1.03]"
+              >
+                Every Porsche Tells <br />
+                a <span className="premium-gradient-text">Factory-Verified</span> <br />
+                Story.
+              </motion.h1>
+
+              <motion.p
+                custom={0.2}
+                variants={fadeUp}
+                className="text-zinc-600 text-sm sm:text-base leading-relaxed max-w-lg"
+              >
+                Reconstruct, personalize, and print high-fidelity window stickers for any Porsche model. Retrieve exact custom option lists, standard specs, and MSRP pricing directly from historical archives.
+              </motion.p>
+
+              {/* Feature strip -- editorial inline list, wraps cleanly at any width */}
+              <motion.div
+                custom={0.3}
+                variants={fadeUp}
+                className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2"
+              >
+                {[
+                  "100% Spec Verified",
+                  "Official EPA Metrics",
+                  "Vector Design PDF",
+                ].map((label) => (
+                  <div key={label} className="flex items-center space-x-2 text-xs font-mono text-zinc-600">
+                    <CheckCircle className="w-3.5 h-3.5 text-[#9B2226] shrink-0" />
+                    <span className="uppercase tracking-wider">{label}</span>
+                  </div>
+                ))}
+              </motion.div>
+
+              {/* Mobile-only inline lookup form (desktop version floats on the image panel) */}
+              <motion.div custom={0.4} variants={fadeUp} className="lg:hidden pt-4">
+                <LookupForm onLookup={onLookup} isLoading={isLoading} onOpenVinGuide={onOpenVinGuide} />
+              </motion.div>
+            </motion.div>
           </div>
 
-          {/* Floating Form Card on Left/Center */}
-          <div className="lg:col-span-6 flex justify-center">
-            <LookupForm 
-              onLookup={onLookup} 
-              isLoading={isLoading} 
-              onOpenVinGuide={onOpenVinGuide} 
-            />
+          {/* RIGHT: Full-contrast studio photo panel with angled leading edge */}
+          <div className="hidden lg:block lg:col-span-6 relative">
+            <div className="absolute inset-0 lg:[clip-path:polygon(9%_0%,100%_0%,100%_100%,0%_100%)] bg-zinc-950">
+              <img
+                src={porscheHeroImg}
+                alt="Porsche 911 GT3 RS studio photo"
+                className="absolute inset-0 w-full h-full object-cover object-center opacity-95"
+                referrerPolicy="no-referrer"
+              />
+              {/* Legibility gradients */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/20"></div>
+              <div className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black/40 to-transparent"></div>
+
+              {/* Floating glass lookup form */}
+              <div className="absolute inset-0 flex items-center justify-center p-8 xl:p-12 z-20">
+                <LookupForm onLookup={onLookup} isLoading={isLoading} onOpenVinGuide={onOpenVinGuide} />
+              </div>
+
+              {/* Animated decode ticker */}
+              <div className="absolute bottom-6 left-10 right-6 z-20 font-mono">
+                <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-[#8A6B28] mb-1.5">
+                  <ScanLine className="w-3.5 h-3.5 animate-pulse" />
+                  <span>Live Archive Decode</span>
+                </div>
+                <div className="text-xs sm:text-sm text-zinc-100/90 min-h-[20px]">
+                  <span className="text-zinc-400">VIN {tickerPreset.stickerData.vin}</span>
+                  <span className="mx-2 text-zinc-600">&rarr;</span>
+                  <span className={`transition-opacity duration-500 ${tickerPhase === "decoded" ? "opacity-100 text-white font-bold" : "opacity-0"}`}>
+                    {tickerPreset.label} &bull; {tickerPreset.color}
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
 
-        {/* Quick presets list for instant review (no-print) */}
-        <div className="mt-16 border-t border-zinc-800/60 pt-10 no-print">
-          <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-zinc-400 mb-4 flex items-center space-x-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-[#A1FF2C]" />
-            <span>VIEW PORSCHE SAMPLE WINDOW STICKERS :</span>
+        {/* Quick presets filmstrip with real thumbnail crops */}
+        <div className="relative z-20 border-t border-zinc-200/60 px-4 sm:px-6 lg:px-12 xl:px-20 py-10 no-print">
+          <p className="text-[10px] font-mono font-bold uppercase tracking-widest text-zinc-600 mb-4 flex items-center space-x-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-[#9B2226]" />
+            <span>View Porsche Sample Window Stickers :</span>
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {PRESETS.map((p) => (
@@ -224,17 +300,25 @@ export default function Hero({ onLookup, isLoading, onSelectPreset, onOpenVinGui
                 href={p.imageUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-left bg-zinc-950/40 p-4 border border-zinc-800 hover:border-[#A1FF2C] hover:bg-zinc-950 transition-all duration-300 flex justify-between items-center group rounded-none"
+                className="bg-zinc-50/40 border border-zinc-200 hover:border-[#9B2226] hover:bg-zinc-50 transition-all duration-300 flex items-center gap-3 group rounded-none overflow-hidden"
               >
-                <div>
-                  <p className="text-xs font-bold text-white group-hover:text-[#A1FF2C]">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 overflow-hidden border-r border-zinc-200 bg-white flex items-center justify-center p-1.5">
+                  <img
+                    src={p.imageUrl}
+                    alt={`${p.label} window sticker sample`}
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div className="flex-1 min-w-0 py-3">
+                  <p className="text-xs font-bold text-zinc-900 group-hover:text-[#9B2226] truncate">
                     {p.label}
                   </p>
                   <p className="text-[10px] font-mono text-zinc-500 mt-1">
-                    {p.color} Metallic • {p.desc}
+                    {p.color} Metallic &bull; {p.desc}
                   </p>
                 </div>
-                <div className="p-1.5 bg-zinc-900 text-zinc-400 group-hover:bg-[#A1FF2C]/10 group-hover:text-[#A1FF2C] border border-zinc-800 transition-colors">
+                <div className="p-1.5 mr-3 bg-zinc-100 text-zinc-600 group-hover:bg-[#9B2226]/10 group-hover:text-[#9B2226] border border-zinc-200 transition-colors shrink-0">
                   <Eye className="w-4 h-4" />
                 </div>
               </a>

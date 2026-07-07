@@ -43,21 +43,21 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faq" className="py-24 bg-[#09090B] border-b border-zinc-900 no-print">
+    <section id="faq" className="py-24 bg-[#FFFFFF] border-b border-zinc-100 no-print">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-zinc-900 border border-zinc-800 px-3 py-1.5 mb-4">
-            <span className="w-1.5 h-1.5 bg-[#A1FF2C]"></span>
-            <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-bold">
+          <div className="inline-flex items-center space-x-2 bg-zinc-100 border border-zinc-200 px-3 py-1.5 mb-4">
+            <span className="w-1.5 h-1.5 bg-[#8A6B28]"></span>
+            <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 font-bold">
               KNOWLEDGE REPOSITORY
             </span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+          <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">
             Frequently Asked Questions
           </h2>
-          <p className="text-zinc-400 text-sm mt-4">
+          <p className="text-zinc-600 text-sm mt-4">
             Have questions about decoding, sticker history, or printing specifications? Find answers below.
           </p>
         </div>
@@ -69,30 +69,30 @@ export default function FaqSection() {
             return (
               <div
                 key={faq.id}
-                className="bg-zinc-900/30 border border-zinc-800 transition-all duration-300 shadow-sm hover:border-zinc-700 rounded-none overflow-hidden"
+                className="bg-zinc-100/30 border border-zinc-200 transition-all duration-300 shadow-sm hover:border-zinc-300 rounded-none overflow-hidden"
               >
                 <button
                   onClick={() => toggleFaq(faq.id)}
                   className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
                 >
-                  <span className="font-display text-sm sm:text-base font-bold text-white pr-4 hover:text-[#A1FF2C] transition-colors">
+                  <span className="font-display text-sm sm:text-base font-bold text-zinc-900 pr-4 hover:text-[#9B2226] transition-colors">
                     {faq.question}
                   </span>
-                  <span className="flex-shrink-0 p-1.5 bg-zinc-950 border border-zinc-800 rounded-none">
+                  <span className="flex-shrink-0 p-1.5 bg-zinc-50 border border-zinc-200 rounded-none">
                     {isOpen ? (
-                      <Minus className="w-3.5 h-3.5 text-white" />
+                      <Minus className="w-3.5 h-3.5 text-zinc-900" />
                     ) : (
-                      <Plus className="w-3.5 h-3.5 text-[#A1FF2C]" />
+                      <Plus className="w-3.5 h-3.5 text-[#9B2226]" />
                     )}
                   </span>
                 </button>
 
                 <div
                   className={`overflow-hidden transition-all duration-500 ${
-                    isOpen ? "max-h-[500px] border-t border-zinc-800" : "max-h-0"
+                    isOpen ? "max-h-[500px] border-t border-zinc-200" : "max-h-0"
                   }`}
                 >
-                  <p className="p-5 text-xs sm:text-sm text-zinc-400 leading-relaxed bg-zinc-950/20">
+                  <p className="p-5 text-xs sm:text-sm text-zinc-600 leading-relaxed bg-zinc-50/20">
                     {faq.answer}
                   </p>
                 </div>

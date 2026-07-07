@@ -31,49 +31,49 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
   ];
 
   return (
-    <div className="bg-[#09090B] min-h-screen text-white font-sans">
+    <div className="bg-[#FFFFFF] min-h-screen text-zinc-900 font-sans">
       
       {/* Immersive Hero Section */}
-      <section className="relative min-h-[640px] flex items-center bg-[#09090B] py-16 lg:py-24 overflow-hidden border-b border-zinc-800/50 cyber-grid">
+      <section className="relative min-h-[640px] flex items-center bg-[#FFFFFF] py-16 lg:py-24 overflow-hidden border-b border-zinc-200/50 cyber-grid">
         {/* Decorative Background Glows */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#09090B] via-[#09090B]/90 to-transparent w-[60%] z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FFFFFF] via-[#FFFFFF]/90 to-transparent w-[60%] z-10"></div>
         
         {/* Subtle grid accent */}
-        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#000000_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Content Column */}
             <div className="lg:col-span-6 space-y-6 lg:pr-6">
-              <div className="inline-flex items-center space-x-2 bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded-none">
-                <Shield className="w-4 h-4 text-[#A1FF2C] animate-pulse" />
-                <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-bold">
+              <div className="inline-flex items-center space-x-2 bg-zinc-100 border border-zinc-200 px-3 py-1.5 rounded-none">
+                <Shield className="w-4 h-4 text-[#9B2226] animate-pulse" />
+                <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 font-bold">
                   OFFICIAL WARRANTY REFERENCE
                 </span>
               </div>
               
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.05]">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-900 leading-[1.05]">
                 Porsche Factory Coverage <br />
                 <span className="premium-gradient-text">&amp; Sticker Guarantees</span>
               </h1>
               
-              <p className="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-lg font-sans">
+              <p className="text-zinc-600 text-sm sm:text-base leading-relaxed max-w-lg font-sans">
                 Every high-fidelity Monroney window sticker we reproduce details the original manufacturer warranty parameters that came with the vehicle from the factory. Learn about both Porsche's standard coverage profiles and our sticker product guarantee.
               </p>
 
               {/* Status Points */}
-              <div className="flex flex-col space-y-3 pt-2 text-xs font-mono text-zinc-400">
-                <div className="flex items-center space-x-3 bg-zinc-950/60 border border-zinc-800 px-4 py-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#A1FF2C]"></div>
+              <div className="flex flex-col space-y-3 pt-2 text-xs font-mono text-zinc-600">
+                <div className="flex items-center space-x-3 bg-zinc-50/60 border border-zinc-200 px-4 py-2.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#8A6B28]"></div>
                   <span>RETRIEVE EXTENDED DRIVETRAIN PARAMETERS</span>
                 </div>
-                <div className="flex items-center space-x-3 bg-zinc-950/60 border border-zinc-800 px-4 py-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#A1FF2C]"></div>
+                <div className="flex items-center space-x-3 bg-zinc-50/60 border border-zinc-200 px-4 py-2.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#8A6B28]"></div>
                   <span>HIGH-VOLTAGE TAYCAN TRACTION BATTERY METRICS</span>
                 </div>
-                <div className="flex items-center space-x-3 bg-zinc-950/60 border border-zinc-800 px-4 py-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#A1FF2C]"></div>
+                <div className="flex items-center space-x-3 bg-zinc-50/60 border border-zinc-200 px-4 py-2.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#8A6B28]"></div>
                   <span>AUTHENTIC STICKER COVERAGE PRINT GUARANTEES</span>
                 </div>
               </div>
@@ -93,25 +93,25 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
       </section>
 
       {/* What is a Porsche Warranty Check? Section */}
-      <section className="bg-zinc-950 py-16 sm:py-20 border-b border-zinc-800/40">
+      <section className="bg-zinc-50 py-16 sm:py-20 border-b border-zinc-200/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Column: Context Content */}
             <div className="lg:col-span-7 space-y-6 text-left">
-              <div className="inline-flex items-center space-x-2 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-none">
-                <span className="w-1.5 h-1.5 bg-[#A1FF2C] rounded-full"></span>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-bold">
+              <div className="inline-flex items-center space-x-2 bg-zinc-100 border border-zinc-200 px-3 py-1 rounded-none">
+                <span className="w-1.5 h-1.5 bg-[#8A6B28] rounded-full"></span>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 font-bold">
                   ESSENTIAL KNOWLEDGE
                 </span>
               </div>
               
-              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-900 tracking-tight leading-tight">
                 What is a Porsche <br />
                 <span className="premium-gradient-text">Warranty Check?</span>
               </h2>
               
-              <div className="space-y-4 text-zinc-400 text-sm sm:text-base leading-relaxed">
+              <div className="space-y-4 text-zinc-600 text-sm sm:text-base leading-relaxed">
                 <p>
                   A Porsche warranty check reveals crucial details about a Porsche vehicle's original warranty status, including initial active coverage periods, high-voltage battery limits, and factory-authorized guarantees. This is performed instantly using the 17-character chassis VIN, or alternatively, by querying the active license plate registration details.
                 </p>
@@ -123,12 +123,12 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
 
             {/* Right Column: Key Parameters Verified Badge Card */}
             <div className="lg:col-span-5">
-              <div className="bg-zinc-900/40 border border-zinc-800 p-6 sm:p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#A1FF2C]/5 rounded-full blur-2xl"></div>
+              <div className="bg-zinc-100/40 border border-zinc-200 p-6 sm:p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#9B2226]/5 rounded-full blur-2xl"></div>
                 
-                <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-[#A1FF2C] mb-6 flex items-center space-x-2 border-b border-zinc-800 pb-3">
+                <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-[#9B2226] mb-6 flex items-center space-x-2 border-b border-zinc-200 pb-3">
                   <Shield className="w-4 h-4" />
-                  <span className="underline decoration-[#A1FF2C] decoration-2 underline-offset-4">MONRONEY WARRANTY SPECIFICATIONS</span>
+                  <span className="underline decoration-[#9B2226] decoration-2 underline-offset-4">MONRONEY WARRANTY SPECIFICATIONS</span>
                 </h3>
 
                 <ul className="space-y-4">
@@ -139,11 +139,11 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
                     { label: "Roadside Assistance", desc: "Retrieves the complimentary flatbed towing and emergency roadside service window." }
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start space-x-3.5 group">
-                      <div className="w-5 h-5 rounded-none border border-zinc-700 bg-zinc-900 flex items-center justify-center text-[#A1FF2C] group-hover:border-[#A1FF2C] transition-colors mt-0.5 flex-shrink-0">
+                      <div className="w-5 h-5 rounded-none border border-zinc-300 bg-zinc-100 flex items-center justify-center text-[#9B2226] group-hover:border-[#9B2226] transition-colors mt-0.5 flex-shrink-0">
                         <span className="text-[14px] leading-none font-bold">▪</span>
                       </div>
                       <div>
-                        <h4 className="text-xs font-mono font-bold text-white uppercase tracking-wider group-hover:text-[#A1FF2C] transition-colors">
+                        <h4 className="text-xs font-mono font-bold text-zinc-900 uppercase tracking-wider group-hover:text-[#9B2226] transition-colors">
                           {item.label}
                         </h4>
                         <p className="text-[11px] text-zinc-500 leading-normal mt-0.5">
@@ -161,29 +161,29 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
       </section>
 
       {/* What is Porsche Warranty Coverage? Section */}
-      <section className="bg-[#09090B] py-16 sm:py-20 border-b border-zinc-800/40">
+      <section className="bg-[#FFFFFF] py-16 sm:py-20 border-b border-zinc-200/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Header Block */}
           <div className="max-w-3xl mb-12 space-y-4">
-            <div className="inline-flex items-center space-x-2 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-none">
-              <span className="w-1.5 h-1.5 bg-[#A1FF2C] rounded-full"></span>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-bold">
+            <div className="inline-flex items-center space-x-2 bg-zinc-100 border border-zinc-200 px-3 py-1 rounded-none">
+              <span className="w-1.5 h-1.5 bg-[#8A6B28] rounded-full"></span>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 font-bold">
                 FACTORY COVERAGE MATRIX
               </span>
             </div>
-            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-900 tracking-tight leading-tight">
               What is Porsche <span className="premium-gradient-text">Warranty Coverage?</span>
             </h2>
-            <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+            <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
               Porsche AG backs every new vehicle with a layered set of factory protections designed to guard against manufacturing defects, premature wear, and unexpected repair costs. Below is a breakdown of each coverage type and exactly what it protects.
             </p>
           </div>
 
           {/* Coverage Matrix Table */}
-          <div className="border border-zinc-800">
+          <div className="border border-zinc-200">
             {/* Table Header Row */}
-            <div className="hidden sm:grid grid-cols-12 gap-4 px-6 py-4 bg-zinc-900/60 border-b border-zinc-800">
+            <div className="hidden sm:grid grid-cols-12 gap-4 px-6 py-4 bg-zinc-100/60 border-b border-zinc-200">
               <span className="col-span-4 text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-bold">Coverage Type</span>
               <span className="col-span-3 text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-bold">Duration</span>
               <span className="col-span-5 text-[10px] font-mono uppercase tracking-widest text-zinc-500 font-bold">What It Covers</span>
@@ -214,19 +214,19 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
             ].map((row, idx) => (
               <div
                 key={idx}
-                className="grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-4 px-6 py-5 border-b border-zinc-800 last:border-b-0 hover:bg-zinc-900/30 transition-colors"
+                className="grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-4 px-6 py-5 border-b border-zinc-200 last:border-b-0 hover:bg-zinc-100/30 transition-colors"
               >
                 <div className="sm:col-span-4">
-                  <span className="sm:hidden text-[9px] font-mono uppercase tracking-widest text-zinc-600 block mb-1">Coverage Type</span>
-                  <h4 className="font-display text-sm font-bold text-white">{row.type}</h4>
+                  <span className="sm:hidden text-[9px] font-mono uppercase tracking-widest text-zinc-400 block mb-1">Coverage Type</span>
+                  <h4 className="font-display text-sm font-bold text-zinc-900">{row.type}</h4>
                 </div>
                 <div className="sm:col-span-3">
-                  <span className="sm:hidden text-[9px] font-mono uppercase tracking-widest text-zinc-600 block mb-1">Duration</span>
-                  <span className="text-xs font-mono font-bold text-[#A1FF2C]">{row.duration}</span>
+                  <span className="sm:hidden text-[9px] font-mono uppercase tracking-widest text-zinc-400 block mb-1">Duration</span>
+                  <span className="text-xs font-mono font-bold text-[#9B2226]">{row.duration}</span>
                 </div>
                 <div className="sm:col-span-5">
-                  <span className="sm:hidden text-[9px] font-mono uppercase tracking-widest text-zinc-600 block mb-1">What It Covers</span>
-                  <p className="text-xs text-zinc-400 leading-relaxed">{row.covers}</p>
+                  <span className="sm:hidden text-[9px] font-mono uppercase tracking-widest text-zinc-400 block mb-1">What It Covers</span>
+                  <p className="text-xs text-zinc-600 leading-relaxed">{row.covers}</p>
                 </div>
               </div>
             ))}
@@ -236,24 +236,24 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
       </section>
 
       {/* How Does a Porsche Warranty Check by VIN Work? Section */}
-      <section className="bg-zinc-950/20 py-16 sm:py-20 border-b border-zinc-800/40">
+      <section className="bg-zinc-50/20 py-16 sm:py-20 border-b border-zinc-200/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Column: Descriptive Text & CTA */}
             <div className="lg:col-span-6 space-y-6 text-left">
-              <div className="inline-flex items-center space-x-2 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-none">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-bold">
+              <div className="inline-flex items-center space-x-2 bg-zinc-100 border border-zinc-200 px-3 py-1 rounded-none">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 font-bold">
                   STEP-BY-STEP PROCESS
                 </span>
               </div>
               
-              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-zinc-900 tracking-tight leading-tight">
                 How Does a Porsche <br />
                 <span className="premium-gradient-text">Warranty Check by VIN Work?</span>
               </h2>
               
-              <div className="space-y-4 text-zinc-400 text-sm sm:text-base leading-relaxed">
+              <div className="space-y-4 text-zinc-600 text-sm sm:text-base leading-relaxed">
                 <p>
                   Just like a comprehensive vehicle history report, our Porsche window sticker lookup tool allows you to input any 17-character Porsche VIN to uncover authentic warranty profiles and other essential vehicle parameters. You'll decode original factory build sheets, standard safety configurations, optional packages, original MSRP specifications, engine metrics, and fuel economy details.
                 </p>
@@ -265,7 +265,7 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
               <div className="pt-4">
                 <button
                   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                  className="inline-flex items-center justify-center bg-[#A1FF2C] text-black hover:bg-black hover:text-[#A1FF2C] hover:border-[#A1FF2C] text-xs font-mono font-bold uppercase tracking-widest py-3.5 px-8 rounded-none border border-transparent transition-all duration-300 active:scale-[0.99] shadow-[0_0_15px_rgba(161,255,44,0.25)] hover:shadow-[0_0_20px_rgba(161,255,44,0.15)] cursor-pointer"
+                  className="inline-flex items-center justify-center bg-[#9B2226] text-white hover:bg-white hover:text-[#9B2226] hover:border-[#9B2226] text-xs font-mono font-bold uppercase tracking-widest py-3.5 px-8 rounded-none border border-transparent transition-all duration-300 active:scale-[0.99] shadow-[0_0_15px_rgba(155,34,38,0.12)] hover:shadow-[0_0_20px_rgba(155,34,38,0.08)] cursor-pointer"
                 >
                   Get a Porsche warranty lookup
                 </button>
@@ -291,12 +291,12 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
                   desc: "Receive a precise, print-ready reproduction detailing structural engine configurations, exact factory colors, packages, and warranty parameters."
                 }
               ].map((item, idx) => (
-                <div key={idx} className="bg-zinc-950 border border-zinc-850 p-5 flex items-start space-x-4 hover:border-zinc-750 transition-all duration-300">
-                  <div className="text-xs font-mono font-bold text-[#A1FF2C] bg-zinc-900 border border-zinc-800 w-8 h-8 flex items-center justify-center shrink-0">
+                <div key={idx} className="bg-zinc-50 border border-zinc-200 p-5 flex items-start space-x-4 hover:border-zinc-300 transition-all duration-300">
+                  <div className="text-xs font-mono font-bold text-[#9B2226] bg-zinc-100 border border-zinc-200 w-8 h-8 flex items-center justify-center shrink-0">
                     {item.step}
                   </div>
                   <div className="space-y-1">
-                    <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider">
+                    <h3 className="text-sm font-mono font-bold text-zinc-900 uppercase tracking-wider">
                       {item.title}
                     </h3>
                     <p className="text-xs text-zinc-500 leading-relaxed">
@@ -312,24 +312,24 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
       </section>
 
       {/* Types of Warranty Information Accessible with the VIN Section */}
-      <section className="bg-zinc-950 py-20 border-b border-zinc-800/40 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(161,255,44,0.02),transparent_40%)]"></div>
+      <section className="bg-zinc-50 py-20 border-b border-zinc-200/40 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(155,34,38,0.02),transparent_40%)]"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Header Block */}
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <div className="inline-flex items-center space-x-2 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-none">
-              <span className="w-1.5 h-1.5 bg-[#A1FF2C] rounded-full"></span>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-bold">
+            <div className="inline-flex items-center space-x-2 bg-zinc-100 border border-zinc-200 px-3 py-1 rounded-none">
+              <span className="w-1.5 h-1.5 bg-[#8A6B28] rounded-full"></span>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 font-bold">
                 DATA CAPABILITIES
               </span>
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight">
               Types of Warranty Information <br />
               <span className="premium-gradient-text">Accessible with the VIN</span>
             </h2>
-            <p className="text-sm text-zinc-400 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-sm text-zinc-600 leading-relaxed max-w-2xl mx-auto">
               With a Porsche warranty check by VIN, you can instantly unlock comprehensive historic and active coverage profiles embedded within the chassis record.
             </p>
           </div>
@@ -338,60 +338,60 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             
             {/* Bento Card 1: Type of Warranty (Left / Span 7) */}
-            <div className="lg:col-span-7 bg-zinc-900/30 border border-zinc-800/80 p-8 flex flex-col justify-between hover:border-zinc-700/80 transition-all duration-300 relative group">
+            <div className="lg:col-span-7 bg-zinc-100/30 border border-zinc-200/80 p-8 flex flex-col justify-between hover:border-zinc-300/80 transition-all duration-300 relative group">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-[#A1FF2C] bg-zinc-950 border border-zinc-850 px-3 py-1">
+                  <span className="text-xs font-mono font-bold text-[#9B2226] bg-zinc-50 border border-zinc-200 px-3 py-1">
                     CLASSIFICATION
                   </span>
-                  <Shield className="w-5 h-5 text-zinc-500 group-hover:text-[#A1FF2C] transition-colors" />
+                  <Shield className="w-5 h-5 text-zinc-500 group-hover:text-[#9B2226] transition-colors" />
                 </div>
-                <h3 className="font-display text-xl sm:text-2xl font-bold text-white tracking-tight pt-2">
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-zinc-900 tracking-tight pt-2">
                   1. Coverage & Warranty Classification
                 </h3>
-                <p className="text-zinc-400 text-sm leading-relaxed max-w-xl">
+                <p className="text-zinc-600 text-sm leading-relaxed max-w-xl">
                   This details the specific scope of protection allocated to the vehicle. It categorizes whether the chassis remains under the core factory "bumper-to-bumper" limited warranty, a specialized Porsche Powertrain guarantee, an anti-corrosion protection contract, or a verified Porsche Approved Certified Pre-Owned (CPO) extended program.
                 </p>
               </div>
               
               {/* Custom visual element inside Card 1 */}
-              <div className="mt-8 pt-6 border-t border-zinc-800/60 grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div className="mt-8 pt-6 border-t border-zinc-200/60 grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {["Limited", "Powertrain", "CPO Extended", "Corrosion"].map((label, idx) => (
-                  <div key={idx} className="bg-zinc-950/80 border border-zinc-850 p-3 text-center">
+                  <div key={idx} className="bg-zinc-50/80 border border-zinc-200 p-3 text-center">
                     <span className="block text-[10px] font-mono font-bold text-zinc-500 uppercase tracking-widest">TYPE 0{idx + 1}</span>
-                    <span className="block text-xs font-bold text-white mt-1">{label}</span>
+                    <span className="block text-xs font-bold text-zinc-900 mt-1">{label}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Bento Card 2: Original Coverage Period (Right / Span 5) */}
-            <div className="lg:col-span-5 bg-zinc-900/30 border border-zinc-800/80 p-8 flex flex-col justify-between hover:border-zinc-700/80 transition-all duration-300 relative group">
+            <div className="lg:col-span-5 bg-zinc-100/30 border border-zinc-200/80 p-8 flex flex-col justify-between hover:border-zinc-300/80 transition-all duration-300 relative group">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-[#A1FF2C] bg-zinc-950 border border-zinc-850 px-3 py-1">
+                  <span className="text-xs font-mono font-bold text-[#9B2226] bg-zinc-50 border border-zinc-200 px-3 py-1">
                     INTERVALS
                   </span>
-                  <Award className="w-5 h-5 text-zinc-500 group-hover:text-[#A1FF2C] transition-colors" />
+                  <Award className="w-5 h-5 text-zinc-500 group-hover:text-[#9B2226] transition-colors" />
                 </div>
-                <h3 className="font-display text-xl font-bold text-white tracking-tight pt-2">
+                <h3 className="font-display text-xl font-bold text-zinc-900 tracking-tight pt-2">
                   2. Factory Epoch & Duration Parameters
                 </h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">
+                <p className="text-zinc-600 text-sm leading-relaxed">
                   Decodes the exact expiration parameters defined at delivery. Typically listed as duration limits and mileage caps, this specifies the standard duration of original coverage—such as the benchmark 48-month/50,000-mile factory threshold—safeguarding against premature component anomalies.
                 </p>
               </div>
 
               {/* Custom interactive indicator inside Card 2 */}
-              <div className="mt-8 bg-zinc-950/60 border border-zinc-850 p-4 space-y-3">
+              <div className="mt-8 bg-zinc-50/60 border border-zinc-200 p-4 space-y-3">
                 <div className="flex justify-between text-[11px] font-mono text-zinc-500 uppercase tracking-wider">
                   <span>Factory Limit Progress</span>
-                  <span className="text-[#A1FF2C]">100% Retained</span>
+                  <span className="text-[#9B2226]">100% Retained</span>
                 </div>
-                <div className="w-full bg-zinc-900 h-1.5 overflow-hidden">
-                  <div className="bg-[#A1FF2C] h-full w-[75%]" />
+                <div className="w-full bg-zinc-100 h-1.5 overflow-hidden">
+                  <div className="bg-[#9B2226] h-full w-[75%]" />
                 </div>
-                <div className="flex justify-between text-[10px] text-zinc-600 font-mono">
+                <div className="flex justify-between text-[10px] text-zinc-400 font-mono">
                   <span>0 Months</span>
                   <span>48 Months</span>
                 </div>
@@ -399,42 +399,42 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
             </div>
 
             {/* Bento Card 3: Remaining Coverage (Bottom / Span 12) */}
-            <div className="lg:col-span-12 bg-zinc-900/30 border border-zinc-800/80 p-8 hover:border-zinc-700/80 transition-all duration-300 relative group">
+            <div className="lg:col-span-12 bg-zinc-100/30 border border-zinc-200/80 p-8 hover:border-zinc-300/80 transition-all duration-300 relative group">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                 
                 <div className="md:col-span-7 space-y-4">
                   <div className="flex items-center space-x-3">
-                    <span className="text-xs font-mono font-bold text-[#A1FF2C] bg-zinc-950 border border-zinc-850 px-3 py-1">
+                    <span className="text-xs font-mono font-bold text-[#9B2226] bg-zinc-50 border border-zinc-200 px-3 py-1">
                       PROJECTIONS
                     </span>
                     <Info className="w-4 h-4 text-zinc-500" />
                   </div>
-                  <h3 className="font-display text-xl sm:text-2xl font-bold text-white tracking-tight pt-1">
+                  <h3 className="font-display text-xl sm:text-2xl font-bold text-zinc-900 tracking-tight pt-1">
                     3. Estimated Active Buffer Projection
                   </h3>
-                  <p className="text-zinc-400 text-sm leading-relaxed">
+                  <p className="text-zinc-600 text-sm leading-relaxed">
                     While exact remaining buffers are not explicitly written onto a physical Monroney window sticker, our intelligent lookup framework uses the original retail in-service delivery date alongside your vehicle's modern odometer mileage to calculate current warranty buffers. This provides instant visibility into remaining months and miles of protection.
                   </p>
                 </div>
 
                 {/* Interactive diagram inside Card 3 */}
-                <div className="md:col-span-5 bg-zinc-950/80 border border-zinc-850 p-5 space-y-4">
-                  <h4 className="text-[10px] font-mono font-bold text-[#A1FF2C] uppercase tracking-wider">
+                <div className="md:col-span-5 bg-zinc-50/80 border border-zinc-200 p-5 space-y-4">
+                  <h4 className="text-[10px] font-mono font-bold text-[#9B2226] uppercase tracking-wider">
                     Calculated Buffer Formula
                   </h4>
-                  <div className="flex items-center justify-between font-mono bg-zinc-900 p-3 text-xs border border-zinc-800">
-                    <div className="text-zinc-400">
-                      <span className="block text-[8px] text-zinc-600">IN-SERVICE DATE</span>
+                  <div className="flex items-center justify-between font-mono bg-zinc-100 p-3 text-xs border border-zinc-200">
+                    <div className="text-zinc-600">
+                      <span className="block text-[8px] text-zinc-400">IN-SERVICE DATE</span>
                       <span>Delivery Epoch</span>
                     </div>
-                    <span className="text-[#A1FF2C] text-lg font-bold">+</span>
-                    <div className="text-zinc-400">
-                      <span className="block text-[8px] text-zinc-600">ODOMETER STATE</span>
+                    <span className="text-[#9B2226] text-lg font-bold">+</span>
+                    <div className="text-zinc-600">
+                      <span className="block text-[8px] text-zinc-400">ODOMETER STATE</span>
                       <span>Active Mileage</span>
                     </div>
-                    <span className="text-[#A1FF2C] text-lg font-bold">=</span>
-                    <div className="text-white font-bold text-right">
-                      <span className="block text-[8px] text-[#A1FF2C]">REMAINING BUFFER</span>
+                    <span className="text-[#9B2226] text-lg font-bold">=</span>
+                    <div className="text-zinc-900 font-bold text-right">
+                      <span className="block text-[8px] text-[#9B2226]">REMAINING BUFFER</span>
                       <span>Warranty Margin</span>
                     </div>
                   </div>
@@ -449,7 +449,7 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
           <div className="text-center pt-12">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="inline-flex items-center justify-center bg-[#A1FF2C] text-black hover:bg-black hover:text-[#A1FF2C] hover:border-[#A1FF2C] text-xs font-mono font-bold uppercase tracking-widest py-3.5 px-8 rounded-none border border-transparent transition-all duration-300 active:scale-[0.99] shadow-[0_0_15px_rgba(161,255,44,0.25)] hover:shadow-[0_0_20px_rgba(161,255,44,0.15)] cursor-pointer"
+              className="inline-flex items-center justify-center bg-[#9B2226] text-white hover:bg-white hover:text-[#9B2226] hover:border-[#9B2226] text-xs font-mono font-bold uppercase tracking-widest py-3.5 px-8 rounded-none border border-transparent transition-all duration-300 active:scale-[0.99] shadow-[0_0_15px_rgba(155,34,38,0.12)] hover:shadow-[0_0_20px_rgba(155,34,38,0.08)] cursor-pointer"
             >
               Check Porsche Warranty Coverage
             </button>
@@ -459,34 +459,34 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
       </section>
 
       {/* Benefits of a Porsche Warranty Check Section */}
-      <section className="bg-zinc-900/50 py-20 border-b border-zinc-800/40 relative">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_left,rgba(161,255,44,0.01),transparent_50%)] pointer-events-none"></div>
+      <section className="bg-zinc-100/50 py-20 border-b border-zinc-200/40 relative">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_left,rgba(155,34,38,0.01),transparent_50%)] pointer-events-none"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:items-start">
             
             {/* Left Column: Sticky Title & Exposure Card */}
             <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-24">
-              <div className="inline-flex items-center space-x-2 bg-zinc-950 border border-zinc-850 px-3 py-1 rounded-none">
-                <span className="w-1.5 h-1.5 bg-[#A1FF2C] rounded-full"></span>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-bold">
+              <div className="inline-flex items-center space-x-2 bg-zinc-50 border border-zinc-200 px-3 py-1 rounded-none">
+                <span className="w-1.5 h-1.5 bg-[#8A6B28] rounded-full"></span>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 font-bold">
                   EQUITY & RISK
                 </span>
               </div>
               
-              <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight leading-tight">
                 Benefits of a <br />
                 <span className="premium-gradient-text">Porsche Warranty Check</span>
               </h2>
               
-              <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+              <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
                 Did you know a valid factory or Porsche Approved CPO warranty is a highly valuable asset? Verifying and documenting this active protection is crucial for protecting your investment, buying confidently, and securing top-tier resale value.
               </p>
 
               {/* Exposure Risk Estimator */}
-              <div className="bg-zinc-950 border border-zinc-850 p-6 space-y-4">
-                <div className="flex items-center justify-between border-b border-zinc-900 pb-3">
-                  <h3 className="text-xs font-mono font-bold text-[#A1FF2C] uppercase tracking-wider flex items-center space-x-2">
+              <div className="bg-zinc-50 border border-zinc-200 p-6 space-y-4">
+                <div className="flex items-center justify-between border-b border-zinc-100 pb-3">
+                  <h3 className="text-xs font-mono font-bold text-[#9B2226] uppercase tracking-wider flex items-center space-x-2">
                     <Wrench className="w-4 h-4" />
                     <span>Porsche Component Exposure Risk</span>
                   </h3>
@@ -501,8 +501,8 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
                     { component: "PCM Navigation & Cockpit System", cost: "$2,800 - $4,200" }
                   ].map((item, idx) => (
                     <div key={idx} className="flex justify-between items-center text-xs">
-                      <span className="text-zinc-400 font-sans">{item.component}</span>
-                      <span className="text-white font-mono font-bold bg-zinc-900 border border-zinc-850 px-2 py-0.5">{item.cost}</span>
+                      <span className="text-zinc-600 font-sans">{item.component}</span>
+                      <span className="text-zinc-900 font-mono font-bold bg-zinc-100 border border-zinc-200 px-2 py-0.5">{item.cost}</span>
                     </div>
                   ))}
                 </div>
@@ -518,36 +518,36 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
               {[
                 {
                   idx: "01",
-                  icon: <Coins className="w-5 h-5 text-[#A1FF2C]" />,
+                  icon: <Coins className="w-5 h-5 text-[#9B2226]" />,
                   title: "Avoid Catastrophic Repair Expenses",
                   desc: "Porsche repair standards are premium-grade. Checking your warranty parameters ensures you can coordinate complex engineering replacements with your regional Porsche dealer, transferring the repair liability entirely back onto the manufacturer."
                 },
                 {
                   idx: "02",
-                  icon: <Shield className="w-5 h-5 text-[#A1FF2C]" />,
+                  icon: <Shield className="w-5 h-5 text-[#9B2226]" />,
                   title: "Secure Intelligent Pre-Owned Acquisitions",
                   desc: "When shopping for a pre-owned 911, Boxster, or Macan, having verified warranty timelines eliminates guesswork. Buy with complete certainty, knowing if the factory has your back if early mechanical anomalies surface."
                 },
                 {
                   idx: "03",
-                  icon: <TrendingUp className="w-5 h-5 text-[#A1FF2C]" />,
+                  icon: <TrendingUp className="w-5 h-5 text-[#9B2226]" />,
                   title: "Command Premium Resale Value",
                   desc: "Active factory coverage or Porsche Approved Certified Pre-Owned warranties are highly transferable assets. Verifying and displaying these details to potential buyers builds instant trust, facilitating accelerated sales and higher market premiums."
                 },
                 {
                   idx: "04",
-                  icon: <Award className="w-5 h-5 text-[#A1FF2C]" />,
+                  icon: <Award className="w-5 h-5 text-[#9B2226]" />,
                   title: "Proactive Service Integration",
                   desc: "Uncovering your warranty's exact sunset parameters allows you to coordinate a strategic multi-point inspect-and-fix session with authorized technicians, resolving minor wear issues on Porsche's dime before your coverage window expires."
                 }
               ].map((benefit, bIdx) => (
                 <div 
                   key={bIdx} 
-                  className="bg-zinc-900/30 border border-zinc-800/80 p-6 sm:p-8 flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6 hover:border-[#A1FF2C]/30 hover:bg-zinc-900/40 transition-all duration-300 group"
+                  className="bg-zinc-100/30 border border-zinc-200/80 p-6 sm:p-8 flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6 hover:border-[#9B2226]/30 hover:bg-zinc-100/40 transition-all duration-300 group"
                 >
                   {/* Left Icon with Badge */}
-                  <div className="flex sm:flex-col items-center justify-between sm:justify-start w-full sm:w-auto shrink-0 border-b border-zinc-800 sm:border-0 pb-3 sm:pb-0">
-                    <div className="w-12 h-12 bg-zinc-950 border border-zinc-800 flex items-center justify-center rounded-none group-hover:border-[#A1FF2C] group-hover:shadow-[0_0_15px_rgba(161,255,44,0.15)] transition-all duration-300">
+                  <div className="flex sm:flex-col items-center justify-between sm:justify-start w-full sm:w-auto shrink-0 border-b border-zinc-200 sm:border-0 pb-3 sm:pb-0">
+                    <div className="w-12 h-12 bg-zinc-50 border border-zinc-200 flex items-center justify-center rounded-none group-hover:border-[#9B2226] group-hover:shadow-[0_0_15px_rgba(155,34,38,0.08)] transition-all duration-300">
                       {benefit.icon}
                     </div>
                     <span className="text-xs font-mono font-bold text-zinc-500 mt-2 block sm:text-center">
@@ -557,10 +557,10 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
 
                   {/* Right Text */}
                   <div className="space-y-2 flex-grow">
-                    <h3 className="font-display text-base sm:text-lg font-bold text-white uppercase tracking-wider group-hover:text-[#A1FF2C] transition-colors">
+                    <h3 className="font-display text-base sm:text-lg font-bold text-zinc-900 uppercase tracking-wider group-hover:text-[#9B2226] transition-colors">
                       {benefit.title}
                     </h3>
-                    <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed">
+                    <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed">
                       {benefit.desc}
                     </p>
                   </div>
@@ -571,7 +571,7 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
               <div className="pt-6 text-center sm:text-left">
                 <button
                   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                  className="inline-flex items-center justify-center bg-[#A1FF2C] text-black hover:bg-black hover:text-[#A1FF2C] hover:border-[#A1FF2C] text-xs font-mono font-bold uppercase tracking-widest py-3.5 px-8 rounded-none border border-transparent transition-all duration-300 active:scale-[0.99] shadow-[0_0_15px_rgba(161,255,44,0.25)] hover:shadow-[0_0_20px_rgba(161,255,44,0.15)] cursor-pointer"
+                  className="inline-flex items-center justify-center bg-[#9B2226] text-white hover:bg-white hover:text-[#9B2226] hover:border-[#9B2226] text-xs font-mono font-bold uppercase tracking-widest py-3.5 px-8 rounded-none border border-transparent transition-all duration-300 active:scale-[0.99] shadow-[0_0_15px_rgba(155,34,38,0.12)] hover:shadow-[0_0_20px_rgba(155,34,38,0.08)] cursor-pointer"
                 >
                   Verify Porsche Warranty Status Today
                 </button>
@@ -583,21 +583,21 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
       </section>
 
       {/* How to Check Your Porsche's Warranty Section */}
-      <section className="bg-zinc-950 py-24 border-b border-zinc-800/40 relative">
+      <section className="bg-zinc-50 py-24 border-b border-zinc-200/40 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Header Block */}
           <div className="text-center max-w-4xl mx-auto mb-16 space-y-4">
-            <div className="inline-flex items-center space-x-2 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-none">
-              <span className="w-1.5 h-1.5 bg-[#A1FF2C] rounded-full"></span>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-bold">
+            <div className="inline-flex items-center space-x-2 bg-zinc-100 border border-zinc-200 px-3 py-1 rounded-none">
+              <span className="w-1.5 h-1.5 bg-[#8A6B28] rounded-full"></span>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 font-bold">
                 WARRANTY GUIDE
               </span>
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zinc-900 tracking-tight leading-tight">
               How to Check Your <span className="premium-gradient-text">Porsche's Warranty</span>
             </h2>
-            <p className="text-sm sm:text-base text-zinc-400 leading-relaxed max-w-3xl mx-auto pt-2">
+            <p className="text-sm sm:text-base text-zinc-600 leading-relaxed max-w-3xl mx-auto pt-2">
               You can find car warranty details in the window sticker or by checking the vehicle history report. Here, let's guide you on the steps to follow to access the warranty details from a window sticker:
             </p>
           </div>
@@ -606,45 +606,45 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             
             {/* Step 1 */}
-            <div className="bg-zinc-900/20 border border-zinc-800/80 hover:border-[#A1FF2C]/40 transition-all duration-300 p-8 rounded-none flex flex-col justify-between min-h-[260px] relative group">
-              <div className="absolute top-4 right-4 text-xs font-mono font-bold text-zinc-600 group-hover:text-[#A1FF2C] transition-colors">
+            <div className="bg-zinc-100/20 border border-zinc-200/80 hover:border-[#9B2226]/40 transition-all duration-300 p-8 rounded-none flex flex-col justify-between min-h-[260px] relative group">
+              <div className="absolute top-4 right-4 text-xs font-mono font-bold text-zinc-400 group-hover:text-[#9B2226] transition-colors">
                 STEP 01
               </div>
               <div className="space-y-4 pt-4">
-                <h3 className="font-display text-xl font-bold text-white uppercase tracking-wider">
+                <h3 className="font-display text-xl font-bold text-zinc-900 uppercase tracking-wider">
                   Enter the 17-digit Porsche VIN
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
                   Locate your vehicle's chassis number on the windshield lower left or driver's door jamb. If you cannot access the VIN, you can also query the warranty by active license plate number or specifying the Porsche model year, make, and series.
                 </p>
               </div>
             </div>
 
             {/* Step 2 */}
-            <div className="bg-zinc-900/20 border border-zinc-800/80 hover:border-[#A1FF2C]/40 transition-all duration-300 p-8 rounded-none flex flex-col justify-between min-h-[260px] relative group">
-              <div className="absolute top-4 right-4 text-xs font-mono font-bold text-zinc-600 group-hover:text-[#A1FF2C] transition-colors">
+            <div className="bg-zinc-100/20 border border-zinc-200/80 hover:border-[#9B2226]/40 transition-all duration-300 p-8 rounded-none flex flex-col justify-between min-h-[260px] relative group">
+              <div className="absolute top-4 right-4 text-xs font-mono font-bold text-zinc-400 group-hover:text-[#9B2226] transition-colors">
                 STEP 02
               </div>
               <div className="space-y-4 pt-4">
-                <h3 className="font-display text-xl font-bold text-white uppercase tracking-wider">
+                <h3 className="font-display text-xl font-bold text-zinc-900 uppercase tracking-wider">
                   Click on 'Search' to Preview
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
                   Initiate the database lookup. Our systems will index factory digital records, decrypt standard configuration parameters, build options, paint packages, and initial active delivery periods to compile your dynamic window sticker.
                 </p>
               </div>
             </div>
 
             {/* Step 3 */}
-            <div className="bg-zinc-900/20 border border-zinc-800/80 hover:border-[#A1FF2C]/40 transition-all duration-300 p-8 rounded-none flex flex-col justify-between min-h-[260px] relative group">
-              <div className="absolute top-4 right-4 text-xs font-mono font-bold text-zinc-600 group-hover:text-[#A1FF2C] transition-colors">
+            <div className="bg-zinc-100/20 border border-zinc-200/80 hover:border-[#9B2226]/40 transition-all duration-300 p-8 rounded-none flex flex-col justify-between min-h-[260px] relative group">
+              <div className="absolute top-4 right-4 text-xs font-mono font-bold text-zinc-400 group-hover:text-[#9B2226] transition-colors">
                 STEP 03
               </div>
               <div className="space-y-4 pt-4">
-                <h3 className="font-display text-xl font-bold text-white uppercase tracking-wider">
+                <h3 className="font-display text-xl font-bold text-zinc-900 uppercase tracking-wider">
                   Complete & Download Sticker
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
                   Verify the compiled preview details, then finalize the generation request. This allows you to instantly download or print high-fidelity, print-ready Monroney replicas as standard PDFs for future reference or resale presentations.
                 </p>
               </div>
@@ -656,13 +656,13 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-zinc-900 border border-zinc-800 text-white hover:text-[#A1FF2C] hover:border-[#A1FF2C] text-xs font-mono font-bold uppercase tracking-widest py-3.5 px-8 rounded-none transition-all duration-300 active:scale-[0.99] shadow-sm cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#C9A227] text-zinc-900 hover:bg-[#B8922A] text-xs font-mono font-bold uppercase tracking-widest py-3.5 px-8 rounded-none border border-transparent transition-all duration-300 active:scale-[0.99] shadow-sm cursor-pointer"
             >
               View Sample Window Sticker
             </button>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#A1FF2C] text-black hover:bg-black hover:text-[#A1FF2C] hover:border-[#A1FF2C] text-xs font-mono font-bold uppercase tracking-widest py-3.5 px-8 rounded-none border border-transparent transition-all duration-300 active:scale-[0.99] shadow-[0_0_15px_rgba(161,255,44,0.25)] hover:shadow-[0_0_20px_rgba(161,255,44,0.15)] cursor-pointer"
+              className="w-full sm:w-auto inline-flex items-center justify-center bg-[#9B2226] text-white hover:bg-white hover:text-[#9B2226] hover:border-[#9B2226] text-xs font-mono font-bold uppercase tracking-widest py-3.5 px-8 rounded-none border border-transparent transition-all duration-300 active:scale-[0.99] shadow-[0_0_15px_rgba(155,34,38,0.12)] hover:shadow-[0_0_20px_rgba(155,34,38,0.08)] cursor-pointer"
             >
               Get a Porsche Window Sticker
             </button>
@@ -672,23 +672,23 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
       </section>
 
       {/* Other Ways to Check Porsche Warranty Coverage */}
-      <section className="bg-zinc-950/40 py-20 border-b border-zinc-800/40 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
+      <section className="bg-zinc-50/40 py-20 border-b border-zinc-200/40 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#000000_1px,transparent_1px)] [background-size:20px_20px]"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
           {/* Header Block */}
           <div className="max-w-3xl mb-14 space-y-4">
-            <div className="inline-flex items-center space-x-2 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-none">
-              <span className="w-1.5 h-1.5 bg-[#A1FF2C] rounded-full"></span>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-bold">
+            <div className="inline-flex items-center space-x-2 bg-zinc-100 border border-zinc-200 px-3 py-1 rounded-none">
+              <span className="w-1.5 h-1.5 bg-[#8A6B28] rounded-full"></span>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 font-bold">
                 ADDITIONAL RESOURCES
               </span>
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight leading-tight">
               Other Ways to Check <span className="premium-gradient-text">Porsche Warranty Coverage</span>
             </h2>
-            <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">
               While the window sticker is the fastest way to unpack a Porsche's original coverage parameters, owners and buyers have several additional verified channels to confirm active warranty status.
             </p>
           </div>
@@ -715,15 +715,15 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-zinc-950 border border-zinc-850 p-6 hover:border-[#A1FF2C]/40 transition-all duration-300 group"
+                className="bg-zinc-50 border border-zinc-200 p-6 hover:border-[#9B2226]/40 transition-all duration-300 group"
               >
-                <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">
                   Method 0{idx + 1}
                 </span>
-                <h3 className="font-display text-base font-bold text-white mt-2 group-hover:text-[#A1FF2C] transition-colors">
+                <h3 className="font-display text-base font-bold text-zinc-900 mt-2 group-hover:text-[#9B2226] transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-xs text-zinc-400 leading-relaxed mt-2.5">
+                <p className="text-xs text-zinc-600 leading-relaxed mt-2.5">
                   {item.desc}
                 </p>
               </div>
@@ -734,21 +734,21 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
       </section>
 
       {/* Check Popular Porsche Models */}
-      <section className="py-20 border-b border-zinc-800/40">
+      <section className="py-20 border-b border-zinc-200/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Header Block */}
           <div className="max-w-3xl mb-14 space-y-4">
-            <div className="inline-flex items-center space-x-2 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-none">
-              <span className="w-1.5 h-1.5 bg-[#A1FF2C] rounded-full"></span>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-bold">
+            <div className="inline-flex items-center space-x-2 bg-zinc-100 border border-zinc-200 px-3 py-1 rounded-none">
+              <span className="w-1.5 h-1.5 bg-[#8A6B28] rounded-full"></span>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 font-bold">
                 MODEL LINEUP
               </span>
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight leading-tight">
               Check Popular <span className="premium-gradient-text">Porsche Models</span>
             </h2>
-            <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">
               Warranty parameters and factory coverage windows vary by series. Browse the model lines below to check window sticker and warranty details for a specific Porsche.
             </p>
           </div>
@@ -775,11 +775,11 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
             ].map((cat, idx) => (
               <div
                 key={idx}
-                className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-10 pb-8 border-b border-zinc-900 last:border-b-0 last:pb-0"
+                className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-10 pb-8 border-b border-zinc-100 last:border-b-0 last:pb-0"
               >
                 <div className="sm:w-40 shrink-0 flex items-center gap-2.5">
-                  <span className="w-1 h-5 bg-[#A1FF2C]"></span>
-                  <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-400">
+                  <span className="w-1 h-5 bg-[#9B2226]"></span>
+                  <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-600">
                     {cat.label}
                   </span>
                 </div>
@@ -787,7 +787,7 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
                   {cat.models.map((model, mIdx) => (
                     <span
                       key={mIdx}
-                      className="px-4 py-2 text-xs sm:text-sm font-semibold text-zinc-300 bg-zinc-900/40 border border-zinc-800 hover:border-[#A1FF2C] hover:text-[#A1FF2C] hover:bg-[#A1FF2C]/5 transition-all duration-300 cursor-default"
+                      className="px-4 py-2 text-xs sm:text-sm font-semibold text-zinc-700 bg-zinc-100/40 border border-zinc-200 hover:border-[#9B2226] hover:text-[#9B2226] hover:bg-[#9B2226]/5 transition-all duration-300 cursor-default"
                     >
                       {model}
                     </span>
@@ -801,21 +801,21 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
       </section>
 
       {/* Other Available Porsche VIN Tools */}
-      <section className="py-20 bg-zinc-950/30 border-b border-zinc-800/40">
+      <section className="py-20 bg-zinc-50/30 border-b border-zinc-200/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Header Block */}
           <div className="max-w-3xl mb-12 space-y-4">
-            <div className="inline-flex items-center space-x-2 bg-zinc-900 border border-zinc-800 px-3 py-1 rounded-none">
-              <span className="w-1.5 h-1.5 bg-[#A1FF2C] rounded-full"></span>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-bold">
+            <div className="inline-flex items-center space-x-2 bg-zinc-100 border border-zinc-200 px-3 py-1 rounded-none">
+              <span className="w-1.5 h-1.5 bg-[#8A6B28] rounded-full"></span>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 font-bold">
                 COMPANION TOOLS
               </span>
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight leading-tight">
               Other Available <span className="premium-gradient-text">Porsche VIN Tools</span>
             </h2>
-            <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">
               Beyond warranty coverage, the same chassis VIN unlocks a full set of decoding tools to research any Porsche in depth.
             </p>
           </div>
@@ -823,28 +823,28 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
           {/* Tools Grid - Symmetrical 3x2 on desktop, matches homepage OtherTools layout */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Porsche Paint Code by VIN", desc: "Identify the exact factory paint code, name, and color formulation.", icon: <Paintbrush className="w-5 h-5 text-[#A1FF2C]" /> },
-              { title: "Porsche Options by VIN", desc: "Decode all original factory-installed option codes and prices.", icon: <ListChecks className="w-5 h-5 text-[#A1FF2C]" /> },
-              { title: "Porsche Build Sheet by VIN", desc: "Get a comprehensive build sheet listing every option and original spec.", icon: <FileText className="w-5 h-5 text-[#A1FF2C]" /> },
-              { title: "Porsche Specification by VIN", desc: "View complete technical, chassis, dimensions, and engine specs.", icon: <Cpu className="w-5 h-5 text-[#A1FF2C]" /> },
-              { title: "Porsche VIN Decoder", desc: "Translate any 17-character Porsche VIN into readable vehicle data.", icon: <Binary className="w-5 h-5 text-[#A1FF2C]" /> }
+              { title: "Porsche Paint Code by VIN", desc: "Identify the exact factory paint code, name, and color formulation.", icon: <Paintbrush className="w-5 h-5 text-[#9B2226]" /> },
+              { title: "Porsche Options by VIN", desc: "Decode all original factory-installed option codes and prices.", icon: <ListChecks className="w-5 h-5 text-[#9B2226]" /> },
+              { title: "Porsche Build Sheet by VIN", desc: "Get a comprehensive build sheet listing every option and original spec.", icon: <FileText className="w-5 h-5 text-[#9B2226]" /> },
+              { title: "Porsche Specification by VIN", desc: "View complete technical, chassis, dimensions, and engine specs.", icon: <Cpu className="w-5 h-5 text-[#9B2226]" /> },
+              { title: "Porsche VIN Decoder", desc: "Translate any 17-character Porsche VIN into readable vehicle data.", icon: <Binary className="w-5 h-5 text-[#9B2226]" /> }
             ].map((tool, idx) => (
               <button
                 key={idx}
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="text-left bg-zinc-900/30 border border-zinc-800 hover:border-[#A1FF2C]/40 hover:bg-zinc-900/50 transition-all duration-300 p-8 rounded-none flex flex-col justify-between min-h-[180px] group relative active:scale-[0.99]"
+                className="text-left bg-zinc-100/30 border border-zinc-200 hover:border-[#9B2226]/40 hover:bg-zinc-100/50 transition-all duration-300 p-8 rounded-none flex flex-col justify-between min-h-[180px] group relative active:scale-[0.99]"
               >
                 <div>
                   <div className="mb-4 flex items-center justify-between">
-                    <div className="p-2 bg-zinc-950/80 border border-zinc-800 group-hover:border-[#A1FF2C]/30 transition-colors">
+                    <div className="p-2 bg-zinc-50/80 border border-zinc-200 group-hover:border-[#9B2226]/30 transition-colors">
                       {tool.icon}
                     </div>
-                    <ArrowRight className="w-4 h-4 text-zinc-600 group-hover:text-[#A1FF2C] group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-4 h-4 text-zinc-400 group-hover:text-[#9B2226] group-hover:translate-x-1 transition-all" />
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2 font-display group-hover:text-zinc-100 transition-colors">
+                  <h3 className="text-lg font-bold text-zinc-900 mb-2 font-display">
                     {tool.title}
                   </h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed">
+                  <p className="text-sm text-zinc-600 leading-relaxed">
                     {tool.desc}
                   </p>
                 </div>
@@ -856,21 +856,21 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
       </section>
 
       {/* Warranty Frequently Asked Questions (matches homepage FAQ accordion) */}
-      <section className="py-24 bg-[#09090B] border-b border-zinc-900 no-print">
+      <section className="py-24 bg-[#FFFFFF] border-b border-zinc-100 no-print">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
 
           {/* Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-zinc-900 border border-zinc-800 px-3 py-1.5 mb-4">
-              <span className="w-1.5 h-1.5 bg-[#A1FF2C]"></span>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 font-bold">
+            <div className="inline-flex items-center space-x-2 bg-zinc-100 border border-zinc-200 px-3 py-1.5 mb-4">
+              <span className="w-1.5 h-1.5 bg-[#8A6B28]"></span>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-zinc-600 font-bold">
                 KNOWLEDGE REPOSITORY
               </span>
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+            <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">
               Warranty Frequently Asked Questions
             </h2>
-            <p className="text-zinc-400 text-sm mt-4">
+            <p className="text-zinc-600 text-sm mt-4">
               Have questions about factory coverage, transfers, or CPO protection? Find answers below.
             </p>
           </div>
@@ -882,30 +882,30 @@ export default function WarrantyPage({ onLookup, isLoading, onOpenVinGuide }: Wa
               return (
                 <div
                   key={faq.id}
-                  className="bg-zinc-900/30 border border-zinc-800 transition-all duration-300 shadow-sm hover:border-zinc-700 rounded-none overflow-hidden"
+                  className="bg-zinc-100/30 border border-zinc-200 transition-all duration-300 shadow-sm hover:border-zinc-300 rounded-none overflow-hidden"
                 >
                   <button
                     onClick={() => setOpenFaqId((prevId) => (prevId === faq.id ? null : faq.id))}
                     className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
                   >
-                    <span className="font-display text-sm sm:text-base font-bold text-white pr-4 hover:text-[#A1FF2C] transition-colors">
+                    <span className="font-display text-sm sm:text-base font-bold text-zinc-900 pr-4 hover:text-[#9B2226] transition-colors">
                       {faq.question}
                     </span>
-                    <span className="flex-shrink-0 p-1.5 bg-zinc-950 border border-zinc-800 rounded-none">
+                    <span className="flex-shrink-0 p-1.5 bg-zinc-50 border border-zinc-200 rounded-none">
                       {isOpen ? (
-                        <Minus className="w-3.5 h-3.5 text-white" />
+                        <Minus className="w-3.5 h-3.5 text-zinc-900" />
                       ) : (
-                        <Plus className="w-3.5 h-3.5 text-[#A1FF2C]" />
+                        <Plus className="w-3.5 h-3.5 text-[#9B2226]" />
                       )}
                     </span>
                   </button>
 
                   <div
                     className={`overflow-hidden transition-all duration-500 ${
-                      isOpen ? "max-h-[500px] border-t border-zinc-800" : "max-h-0"
+                      isOpen ? "max-h-[500px] border-t border-zinc-200" : "max-h-0"
                     }`}
                   >
-                    <p className="p-5 text-xs sm:text-sm text-zinc-400 leading-relaxed bg-zinc-950/20">
+                    <p className="p-5 text-xs sm:text-sm text-zinc-600 leading-relaxed bg-zinc-50/20">
                       {faq.answer}
                     </p>
                   </div>

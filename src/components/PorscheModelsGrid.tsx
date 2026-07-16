@@ -1,4 +1,5 @@
 import React from "react";
+import { ChevronRight } from "lucide-react";
 
 export default function PorscheModelsGrid() {
   const models = [
@@ -44,9 +45,7 @@ export default function PorscheModelsGrid() {
                 <span className="text-sm sm:text-base font-semibold text-zinc-800 group-hover:text-zinc-900 transition-colors">
                   {model}
                 </span>
-                <span className="text-[10px] font-mono text-zinc-400 group-hover:text-[#9B2226] transition-colors">
-                  AVAILABLE
-                </span>
+                <ChevronRight className="w-4 h-4 text-zinc-400 group-hover:text-[#9B2226] transition-all group-hover:translate-x-0.5" />
               </div>
             );
           })}

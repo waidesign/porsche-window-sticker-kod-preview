@@ -210,7 +210,7 @@ export default function Hero({ onLookup, isLoading, onSelectPreset, onOpenVinGui
               <motion.h1
                 custom={0.1}
                 variants={fadeUp}
-                className="font-display text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold tracking-tight text-zinc-900 leading-[1.03]"
+                className="font-display text-3xl sm:text-5xl lg:text-[3.4rem] font-extrabold tracking-tight text-zinc-900 leading-[1.03]"
               >
                 Every Porsche Tells <br />
                 a <span className="premium-gradient-text">Factory-Verified</span> <br />
@@ -224,6 +224,11 @@ export default function Hero({ onLookup, isLoading, onSelectPreset, onOpenVinGui
               >
                 Reconstruct, personalize, and print high-fidelity window stickers for any Porsche model. Retrieve exact custom option lists, standard specs, and MSRP pricing directly from historical archives.
               </motion.p>
+
+              {/* Mobile-only inline lookup form (desktop version floats on the image panel) */}
+              <motion.div custom={0.4} variants={fadeUp} className="lg:hidden pt-4">
+                <LookupForm onLookup={onLookup} isLoading={isLoading} onOpenVinGuide={onOpenVinGuide} variant="solid" />
+              </motion.div>
 
               {/* Feature strip -- editorial inline list, wraps cleanly at any width */}
               <motion.div
@@ -241,11 +246,6 @@ export default function Hero({ onLookup, isLoading, onSelectPreset, onOpenVinGui
                     <span className="uppercase tracking-wider">{label}</span>
                   </div>
                 ))}
-              </motion.div>
-
-              {/* Mobile-only inline lookup form (desktop version floats on the image panel) */}
-              <motion.div custom={0.4} variants={fadeUp} className="lg:hidden pt-4">
-                <LookupForm onLookup={onLookup} isLoading={isLoading} onOpenVinGuide={onOpenVinGuide} variant="solid" />
               </motion.div>
             </motion.div>
           </div>

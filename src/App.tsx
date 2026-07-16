@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Agentation } from "agentation";
 import Navbar from "./components/Navbar";
+import DiscountBanner from "./components/DiscountBanner";
 import Hero from "./components/Hero";
 import TrustBand from "./components/TrustBand";
 import InformationSection from "./components/InformationSection";
@@ -11,6 +12,9 @@ import OtherTools from "./components/OtherTools";
 import FaqSection from "./components/FaqSection";
 import Footer from "./components/Footer";
 import WarrantyPage from "./components/WarrantyPage";
+import PreviewPage from "./components/PreviewPage";
+import ModelSpecsPage from "./components/ModelSpecsPage";
+import VinDecoderPage from "./components/VinDecoderPage";
 import { WindowStickerData, LookupRequest } from "./types";
 import { Sparkles, Shield, Cpu, Info, Check, RefreshCw, X } from "lucide-react";
 
@@ -19,6 +23,16 @@ export default function App() {
   const [loadingMessage, setLoadingMessage] = useState("");
   const [isVinModalOpen, setIsVinModalOpen] = useState(false);
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const [decodedVehicle, setDecodedVehicle] = useState<any>(() => {
+    try {
+      const stored = localStorage.getItem("decodedVehicle");
+      const status = localStorage.getItem("checkoutStatus");
+      if (stored && status === "pending") {
+        return JSON.parse(stored);
+      }
+    } catch (e) {}
+    return null;
+  });
 
   useEffect(() => {
     const handleLocationChange = () => {
@@ -101,8 +115,28 @@ export default function App() {
       // Simulate real premium database query latency
       setTimeout(() => {
         if (resData && resData.data) {
-          // No-op or log because sticker result was removed
           console.log("Successfully decoded vehicle:", resData.data);
+          
+          const vinStr = resData.data.vin || "";
+          const lastCharCode = vinStr.charCodeAt(vinStr.length - 1) || 0;
+          const hasAuction = lastCharCode % 2 === 1;
+          
+          const vehicle = {
+            vin: resData.data.vin,
+            year: resData.data.year,
+            make: resData.data.make || "Porsche",
+            model: resData.data.model,
+            trim: resData.data.trim,
+            hasAuctionHistory: hasAuction
+          };
+          
+          localStorage.setItem("decodedVehicle", JSON.stringify(vehicle));
+          localStorage.setItem("checkoutStatus", "pending");
+          setDecodedVehicle(vehicle);
+          
+          // Redirect to preview page
+          window.history.pushState({}, "", "/preview");
+          setCurrentPath("/preview");
         } else {
           console.error("No data returned", resData);
         }
@@ -137,30 +171,39 @@ export default function App() {
     <div className="min-h-screen bg-[#FFFFFF] flex flex-col selection:bg-[#9B2226] selection:text-white">
       {import.meta.env.DEV && <Agentation />}
 
+      {/* Dynamic Discount Banner */}
+      <DiscountBanner 
+        decodedVehicle={decodedVehicle} 
+        setDecodedVehicle={setDecodedVehicle} 
+      />
+
       {/* Sticky Premium Navbar */}
       <Navbar />
 
       <main className="flex-grow">
-        {/* Dynamic Loading Overlay */}
+        {/* Dynamic Loading Overlay Popup */}
         {isLoading && (
-          <div className="bg-[#FFFFFF] border-y border-zinc-200 py-24 text-center flex flex-col items-center justify-center relative overflow-hidden z-20">
-            <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#000000_1px,transparent_1px)] [background-size:16px_16px]"></div>
-            
-            <div className="relative w-16 h-16 mb-6">
-              {/* Spinning Loader Circles */}
-              <div className="absolute inset-0 border-4 border-zinc-100 rounded-full"></div>
-              <div className="absolute inset-0 border-4 border-[#9B2226] border-t-transparent rounded-full animate-spin"></div>
-            </div>
+          <div className="fixed inset-0 bg-black/80 backdrop-blur-xs flex items-center justify-center z-[120] p-4 no-print">
+            <div className="bg-white border border-zinc-200 max-w-[420px] w-full p-8 text-center flex flex-col items-center justify-center relative shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)]">
+              {/* Gold/Red Top Accent Line */}
+              <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-[#9B2226] via-zinc-900 to-transparent"></div>
+              
+              <div className="relative w-16 h-16 mb-6">
+                {/* Spinning Loader Circles */}
+                <div className="absolute inset-0 border-4 border-zinc-100 rounded-full"></div>
+                <div className="absolute inset-0 border-4 border-[#9B2226] border-t-transparent rounded-full animate-spin"></div>
+              </div>
 
-            <span className="text-[10px] font-mono uppercase tracking-widest text-[#9B2226] font-bold block mb-2">
-              CHASSIS ARCHIVAL QUERY IN PROGRESS
-            </span>
-            <h3 className="font-display text-lg font-bold text-zinc-900 mb-3">
-              Decoding Registry Records
-            </h3>
-            <p className="text-sm text-zinc-600 font-mono animate-pulse min-h-[20px]">
-              {loadingMessage}
-            </p>
+              <span className="text-[10px] font-mono uppercase tracking-widest text-[#9B2226] font-bold block mb-2">
+                CHASSIS ARCHIVAL QUERY IN PROGRESS
+              </span>
+              <h3 className="font-display text-lg font-bold text-zinc-900 mb-3 font-sans">
+                Decoding History Records
+              </h3>
+              <p className="text-sm text-zinc-600 font-mono animate-pulse min-h-[20px]">
+                {loadingMessage}
+              </p>
+            </div>
           </div>
         )}
 
@@ -169,6 +212,26 @@ export default function App() {
             onLookup={handleLookup} 
             isLoading={isLoading} 
             onOpenVinGuide={() => setIsVinModalOpen(true)} 
+          />
+        ) : currentPath === "/preview" ? (
+          <PreviewPage 
+            decodedVehicle={decodedVehicle}
+            setDecodedVehicle={setDecodedVehicle}
+            onCheckoutSuccess={() => {
+              console.log("Checkout complete!");
+            }}
+          />
+        ) : currentPath === "/model-specs" ? (
+          <ModelSpecsPage
+            onLookup={handleLookup}
+            isLoading={isLoading}
+            onOpenVinGuide={() => setIsVinModalOpen(true)}
+          />
+        ) : currentPath === "/vin-decoder" ? (
+          <VinDecoderPage
+            onLookup={handleLookup}
+            isLoading={isLoading}
+            onOpenVinGuide={() => setIsVinModalOpen(true)}
           />
         ) : (
           <>
